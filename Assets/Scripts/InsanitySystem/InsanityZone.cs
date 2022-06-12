@@ -15,10 +15,14 @@ namespace RyanBeattie.InsanitySystem
         {
             if(theLight == null)
                 theLight = GetComponent<Light2D>();
+
             if(theCollider == null)
+            {
                 theCollider = GetComponent<CircleCollider2D>();
 
-            theCollider.radius = theLight.pointLightInnerRadius;
+                theCollider.radius = theLight.pointLightInnerRadius;
+            }
+
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
