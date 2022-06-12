@@ -36,6 +36,10 @@ namespace RyanBeattie.Iteractables
         {
             if (canInteract)
             {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    Debug.Log("Interacted with the Lost Relic.");
+                }
                 //TODO do action here when interacting
             }
         }

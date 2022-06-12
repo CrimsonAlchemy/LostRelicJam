@@ -1,12 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 namespace RyanBeattie.InsanitySystem
 {
-    [RequireComponent(typeof(Collider2D))]
+    [RequireComponent(typeof(CircleCollider2D))]
     public class InsanityZone : MonoBehaviour
     {
+        Light2D theLight;
+        CircleCollider2D theCollider;
+
+        private void Start()
+        {
+            if(theLight == null)
+                theLight = GetComponent<Light2D>();
+            if(theCollider == null)
+                theCollider = GetComponent<CircleCollider2D>();
+
+            theCollider.radius = theLight.pointLightInnerRadius;
+        }
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
             PlayerSystems.Player player = collision.GetComponent<PlayerSystems.Player>();

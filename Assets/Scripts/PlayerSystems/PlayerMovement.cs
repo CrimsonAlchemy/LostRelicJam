@@ -51,5 +51,6 @@ public class PlayerMovement : MonoBehaviour
 
         moveInput.Normalize();
         playerRigidbody.velocity = moveInput * moveSpeed;
+
     }
 }
