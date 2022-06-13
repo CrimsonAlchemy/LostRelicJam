@@ -1233,6 +1233,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerType: 0
+  insanityZone:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!199 &502549319
 ParticleSystemRenderer:
   serializedVersion: 6

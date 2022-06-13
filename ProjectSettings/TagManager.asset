@@ -44,6 +44,6 @@ TagManager:
   - name: Entity
     uniqueID: 480828309
     locked: 0
-  - name: Wall
+  - name: Tiles
     uniqueID: 1268583531
     locked: 0
