@@ -10,6 +10,7 @@ namespace RyanBeattie.PlayerSystems
         Shadow
     }
 
+    [RequireComponent(typeof(ShadowDamage))]
     public class Player : MonoBehaviour
     {
         [Header("Player Details")]
