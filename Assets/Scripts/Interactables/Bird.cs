@@ -9,6 +9,7 @@ namespace RyanBeattie.Iteractables
         [Header("General Details")]
         public bool canInteract = false;
         public bool playerInShadow = false;
+        public bool patrolling = false;
         [SerializeField] GameObject textbox;
         public float moveSpeed = 5f;
 
@@ -24,6 +25,11 @@ namespace RyanBeattie.Iteractables
         Rigidbody2D theRigidbody;
         GameObject player;
 
+        bool shadowAbsorbAnim = false;
+        bool resting = true;
+        float restingTime = 0f;
+        float maxRestingTime = 3.0f;
+
         private void Start()
         {
             if(theRigidbody == null)
@@ -35,7 +41,7 @@ namespace RyanBeattie.Iteractables
         private void Update()
         {
             Interact();
-            PatrolToPoints();
+            BirdCurrentState();
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -46,7 +52,6 @@ namespace RyanBeattie.Iteractables
                 textbox.SetActive(true);
             }
         }
-
         private void OnTriggerExit2D(Collider2D collision)
         {
             if (collision.CompareTag("Player"))
@@ -89,6 +94,8 @@ namespace RyanBeattie.Iteractables
         void PlayerExitingBirdsShadow()
         {
             playerInShadow = false;
+            resting = true;
+            restingTime = 0;
             currentPatrolPoint = 0;
             player.transform.position = new Vector2(transform.position.x, transform.position.y - 0.5f);
             player.SetActive(true);
@@ -96,44 +103,80 @@ namespace RyanBeattie.Iteractables
 
         void Moving()
         {
-            moveDirection.Normalize();
-            theRigidbody.velocity = moveDirection * moveSpeed;
+            if (!shadowAbsorbAnim)
+            {
+                moveDirection.Normalize();
+                theRigidbody.velocity = moveDirection * moveSpeed;
+            }
         }
 
-        void PatrolToPoints()
+        #region Birds Different States
+        void BirdCurrentState()
         {
-            //To loop between patrol points.
             if (playerInShadow)
             {
-                InsanitySystem.InsanitySystem.instance.Counting = false;
-
-                moveDirection = patrolPoints[currentPatrolPoint].position - transform.position;
-
-                if (Vector2.Distance(transform.position, patrolPoints[currentPatrolPoint].position) < 0.3f)
-                {
-                    currentPatrolPoint++;
-                    if (currentPatrolPoint >= patrolPoints.Length)
-                    {
-                        currentPatrolPoint = 0;
-                    }
-                }
-                Moving();
+                PatrolState();
             }
-
-            //To move the bird to the Idle resting position in the level.
             if (!playerInShadow)
             {
-                moveDirection = idlePoint.position - transform.position;
-                if(Vector2.Distance(transform.position, idlePoint.position) > 0.2f)
-                {
-                    Moving();
-                }
-                else
-                {
-                    transform.position = idlePoint.position;
-                }
+                RestingState();
             }
         }
+        void RestingState()
+        {
+            if(Vector2.Distance(transform.position, idlePoint.position) > 0.2f && resting)
+            {
+                moveDirection = idlePoint.position - transform.position;
+                Moving();
+            }
+            if(Vector2.Distance(transform.position, idlePoint.position) < 0.2f && resting)
+            {
+                transform.position = idlePoint.position;
+                if(restingTime < maxRestingTime)
+                {
+                    restingTime += Time.deltaTime;
+                }
+            }
+            if(restingTime >= maxRestingTime)
+            {
+                FlyingAroundState();
+            }
+        }
+        void FlyingAroundState()
+        {
+            moveDirection = patrolPoints[currentPatrolPoint].position - transform.position;
+            resting = false;
+            restingTime = maxRestingTime;
+
+            if (Vector2.Distance(transform.position, patrolPoints[currentPatrolPoint].position) < 0.3f)
+            {
+                currentPatrolPoint++;
+                if (currentPatrolPoint >= patrolPoints.Length)
+                {
+                    resting = true;
+                    currentPatrolPoint = 0;
+                    restingTime = 0;
+                    RestingState();
+                }
+            }
+            Moving();
+        }
+        void PatrolState()
+        {
+            InsanitySystem.InsanitySystem.instance.Counting = false;
+
+            moveDirection = patrolPoints[currentPatrolPoint].position - transform.position;
+
+            if (Vector2.Distance(transform.position, patrolPoints[currentPatrolPoint].position) < 0.3f)
+            {
+                currentPatrolPoint++;
+                if (currentPatrolPoint >= patrolPoints.Length)
+                {
+                    currentPatrolPoint = 0;
+                }
+            }
+            Moving();
+        }
+        #endregion
     }
 }
-
