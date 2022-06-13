@@ -88,12 +88,9 @@ namespace RyanBeattie.Iteractables
             if(player != null)
             {
                 player.SetActive(false);
-                //player.GetComponent<PlayerSystems.Player>().canDamage = false;
-                //player.GetComponent<PlayerMovement>().gfx.enabled = false;
                 playerInShadow = true;
                 canInteract = true;
 
-                //player.transform.position = gameObject.transform.position;
                 player.GetComponent<PlayerMovement>().enabled = false;
                 FindObjectOfType<CameraFollow>().player = gameObject.transform;
             }

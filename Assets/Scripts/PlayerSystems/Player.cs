@@ -33,8 +33,7 @@ namespace RyanBeattie.PlayerSystems
 
         private void Update()
         {
-            if(canDamage)
-                InsanityZone_CollisionDetection();
+            InsanityZone_CollisionDetection();
         }
 
         void InsanityZone_CollisionDetection()
