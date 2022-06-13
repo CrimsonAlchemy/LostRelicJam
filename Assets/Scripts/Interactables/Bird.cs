@@ -22,6 +22,7 @@ namespace RyanBeattie.Iteractables
 
         private int currentPatrolPoint;
         private Vector3 moveDirection;
+
         Rigidbody2D theRigidbody;
         GameObject player;
 
@@ -72,6 +73,7 @@ namespace RyanBeattie.Iteractables
                     if (playerInShadow)
                     {
                         PlayerInBirdsShadow();
+                        textbox.SetActive(true);
                     }
                     else
                     {
@@ -86,19 +88,31 @@ namespace RyanBeattie.Iteractables
             if(player != null)
             {
                 player.SetActive(false);
+                //player.GetComponent<PlayerSystems.Player>().canDamage = false;
+                //player.GetComponent<PlayerMovement>().gfx.enabled = false;
                 playerInShadow = true;
                 canInteract = true;
+
+                //player.transform.position = gameObject.transform.position;
+                player.GetComponent<PlayerMovement>().enabled = false;
+                FindObjectOfType<CameraFollow>().player = gameObject.transform;
             }
         }
 
         void PlayerExitingBirdsShadow()
         {
+            FindObjectOfType<CameraFollow>().player = player.transform;
+            player.GetComponent<PlayerMovement>().enabled = true;
+
+
             playerInShadow = false;
             resting = true;
             restingTime = 0;
             currentPatrolPoint = 0;
+
             player.transform.position = new Vector2(transform.position.x, transform.position.y - 0.5f);
             player.SetActive(true);
+
         }
 
         void Moving()

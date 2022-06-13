@@ -23,6 +23,8 @@ namespace RyanBeattie.PlayerSystems
         [Tooltip("This is the layermask that the player will eithe be damaged or safe from.")]
         public LayerMask insanityZone;
 
+        public bool canDamage = false;
+
         private void Start()
         {
             if(col == null)
@@ -31,7 +33,8 @@ namespace RyanBeattie.PlayerSystems
 
         private void Update()
         {
-            InsanityZone_CollisionDetection();
+            if(canDamage)
+                InsanityZone_CollisionDetection();
         }
 
         void InsanityZone_CollisionDetection()
