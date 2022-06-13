@@ -37,7 +37,12 @@ namespace RyanBeattie.PlayerSystems
         {
             if (col.IsTouchingLayers(insanityZone) && playerType == PlayerType.Shadow)
             {
-                Debug.Log("Shadow landed, possibly add in a timer before the shadow is destroyed?");
+                GetComponent<ShadowDamage>().Counting = true;
+            }
+            else
+            {
+                GetComponent<ShadowDamage>().Counting = false;
+                GetComponent<ShadowDamage>().ResetCurrentDamage();
             }
         }
     }
