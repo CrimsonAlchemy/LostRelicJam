@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace RyanBeattie.InsanitySystem
 {
@@ -10,9 +11,9 @@ namespace RyanBeattie.InsanitySystem
 
         [Header("Insanity Details")]
         [SerializeField] [Range(1, 20)]float maxInsanity = 10f;
+
         float currentInsanity = 0f;
         bool counting = false;
-
 
         private void Awake()
         {
@@ -30,6 +31,11 @@ namespace RyanBeattie.InsanitySystem
             {
                 counting = value;
             }
+        }
+
+        public void StopCounting()
+        {
+            Counting = false;
         }
         public float CurrentInsanity
         {

@@ -33,7 +33,7 @@ namespace RyanBeattie.InsanitySystem
             {
                 if (player.playerType == PlayerSystems.PlayerType.Human)
                 {
-                    Debug.Log($"I'm a Human! I am safe in the light!");
+                    //Debug.Log($"I'm a Human! I am safe in the light!");
                     InsanitySystem.instance.Counting = false;
                 }
                 if (player.playerType == PlayerSystems.PlayerType.Shadow)
@@ -54,7 +54,7 @@ namespace RyanBeattie.InsanitySystem
             {
                 if (player.playerType == PlayerSystems.PlayerType.Human)
                 {
-                    Debug.Log($"I'm a Human! Oh No! Shadow monsters are after me, better get to the light!");
+                    //Debug.Log($"I'm a Human! Oh No! Shadow monsters are after me, better get to the light!");
                     InsanitySystem.instance.Counting = true;
                 }
                 if (player.playerType == PlayerSystems.PlayerType.Shadow)
