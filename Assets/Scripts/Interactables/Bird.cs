@@ -11,7 +11,7 @@ namespace RyanBeattie.Iteractables
         public bool playerInShadow = false;
         public bool patrolling = false;
         [SerializeField] GameObject textbox;
-        public float moveSpeed = 5f;
+        public float moveSpeed = 2f;
 
         [Space(10)]
         [Header("Bird Move Points")]
@@ -19,6 +19,7 @@ namespace RyanBeattie.Iteractables
         public Transform idlePoint;
         [Tooltip("These are several transforms for the bird to travel between.")]
         public Transform[] patrolPoints;
+        public Transform[] shadowAbsorbPoints;
 
         private int currentPatrolPoint;
         private Vector3 moveDirection;
@@ -83,6 +84,7 @@ namespace RyanBeattie.Iteractables
             }
         }
 
+        public GameObject absorbEffectPrefab;
         void PlayerInBirdsShadow()
         {
             if(player != null)
@@ -91,8 +93,15 @@ namespace RyanBeattie.Iteractables
                 playerInShadow = true;
                 canInteract = true;
 
+                PlayerSystems.ShadowDamageManager.instance.Counting = false;
                 player.GetComponent<PlayerMovement>().enabled = false;
                 FindObjectOfType<CameraFollow>().player = gameObject.transform;
+
+                //Testing
+                GameObject asorbEffect;
+                asorbEffect = absorbEffectPrefab;
+                asorbEffect.GetComponent<AbsorbEffect>().shadowMovePoints = shadowAbsorbPoints;
+                Instantiate(asorbEffect, player.transform.position, Quaternion.identity);
             }
         }
 
@@ -109,6 +118,13 @@ namespace RyanBeattie.Iteractables
 
             player.transform.position = new Vector2(transform.position.x, transform.position.y - 0.5f);
             player.SetActive(true);
+
+            //Testing
+            AbsorbEffect[] effects = FindObjectsOfType<AbsorbEffect>();
+            foreach (var effect in effects)
+            {
+                Destroy(effect.gameObject);
+            }
 
         }
 

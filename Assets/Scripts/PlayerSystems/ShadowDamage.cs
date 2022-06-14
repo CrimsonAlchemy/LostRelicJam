@@ -1,11 +1,67 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
+using System;
 
 namespace RyanBeattie.PlayerSystems
 {
     public class ShadowDamage : MonoBehaviour
     {
+        [SerializeField] SpriteRenderer sRenderer = new SpriteRenderer();
+
+        float targetEffect = 0f;
+        float currentEffect = 1f;
+
+        public bool inLight = false;
+
+        private void OnEnable()
+        {
+            
+        }
+        private void OnDisable()
+        {
+            
+        }
+        private void Start()
+        {
+            currentEffect = ShadowDamageManager.instance.CurrentShadowDamage;
+            targetEffect = ShadowDamageManager.instance.MaxShadowDamage;
+        }
+        private void Update()
+        {
+            //currentEffect = Mathf.Lerp(currentEffect, targetEffect, 2f * Time.deltaTime);
+
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                inLight = !inLight;
+            }
+            if (inLight)
+            {
+                StartDissolving();
+            }
+            if(!inLight)
+            {
+                ResetDissolve();
+            }
+        }
+        public void StartDissolving()
+        {
+            currentEffect = Mathf.MoveTowards(currentEffect, targetEffect, 0.3f * Time.deltaTime);
+            sRenderer.material.SetFloat("_BurnAmount", currentEffect);
+
+        }
+        public void ResetDissolve()
+        {
+            currentEffect = 1f;
+            sRenderer.material.SetFloat("_BurnAmount", currentEffect);
+        }
+
+
+        #region Old Script Code
+        //This code was moved into shadow damage manager
+
         //public static ShadowDamage instance;
 
         //[SerializeField] float maxDamage = 1.5f;
@@ -75,6 +131,7 @@ namespace RyanBeattie.PlayerSystems
         //    ShadowDamageBarUI.A_UpdateShadowDamageBar?.Invoke();
         //    //Debug.Log($"Current Time: {currentDamage}");
         //}
+        #endregion
     }
 }
 
