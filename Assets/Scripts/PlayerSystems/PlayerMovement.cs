@@ -38,13 +38,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (moveInput.x > 0)
         {
-            gameObject.GetComponent<Transform>().eulerAngles = new Vector3(0, 180, 0);
+            gameObject.GetComponent<Transform>().eulerAngles = new Vector3(0, 0, 0);
             //bodySR.flipX = true;
         }
 
         if (moveInput.x < 0)
         {
-            gameObject.GetComponent<Transform>().eulerAngles = new Vector3(0, 0, 0);
+            gameObject.GetComponent<Transform>().eulerAngles = new Vector3(0, 180, 0);
             //bodySR.flipX = false;
 
         }

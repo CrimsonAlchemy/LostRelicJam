@@ -25,7 +25,8 @@ namespace RyanBeattie.PlayerSystems
 
         public void UpdateShadowDamageBar()
         {
-            fill.fillAmount = ShadowDamage.instance.CurrentDamage / ShadowDamage.instance.MaxDamage;
+            //fill.fillAmount = ShadowDamage.instance.CurrentDamage / ShadowDamage.instance.MaxDamage;
+            fill.fillAmount = ShadowDamageManager.instance.CurrentShadowDamage / ShadowDamageManager.instance.MaxShadowDamage;
             //Debug.Log($"{InsanitySystem.instance.CurrentInsanity} Current Insanity!");
         }
     }

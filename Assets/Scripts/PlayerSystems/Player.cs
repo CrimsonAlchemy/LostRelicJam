@@ -10,7 +10,7 @@ namespace RyanBeattie.PlayerSystems
         Shadow
     }
 
-    [RequireComponent(typeof(ShadowDamage))]
+    //[RequireComponent(typeof(ShadowDamage))]
     public class Player : MonoBehaviour
     {
         [Header("Player Details")]
@@ -40,12 +40,16 @@ namespace RyanBeattie.PlayerSystems
         {
             if (col.IsTouchingLayers(insanityZone) && playerType == PlayerType.Shadow)
             {
-                GetComponent<ShadowDamage>().Counting = true;
+                //GetComponent<ShadowDamage>().Counting = true;
+                ShadowDamageManager.instance.Counting = true;
             }
             else
             {
-                GetComponent<ShadowDamage>().Counting = false;
-                GetComponent<ShadowDamage>().ResetCurrentDamage();
+                //GetComponent<ShadowDamage>().Counting = false;
+                //GetComponent<ShadowDamage>().ResetCurrentDamage();
+
+                ShadowDamageManager.instance.Counting = true;
+                ShadowDamageManager.instance.ResetCurrentDamage();
             }
         }
     }
