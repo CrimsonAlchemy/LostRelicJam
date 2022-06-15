@@ -4872,6 +4872,8 @@ MonoBehaviour:
     m_Bits: 256
   canDamage: 0
   anim: {fileID: 574738252}
+  humanAnimController: {fileID: 9100000, guid: f740b929cd8f2094abf671919c80e3dc, type: 2}
+  shadowAnimController: {fileID: 9100000, guid: eaba286feb34f504e9c02059ff88fd6a, type: 2}
 --- !u!114 &1253662413504466603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4938,6 +4940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sRenderer: {fileID: 1253662414636059483}
+  effectSpeed: 0.5
   inLight: 0
 --- !u!95 &574738252
 Animator:
@@ -4949,7 +4952,7 @@ Animator:
   m_GameObject: {fileID: 1253662413504466605}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f740b929cd8f2094abf671919c80e3dc, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

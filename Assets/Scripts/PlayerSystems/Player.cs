@@ -28,42 +28,50 @@ namespace RyanBeattie.PlayerSystems
 
         public Animator anim;
 
+        public RuntimeAnimatorController humanAnimController;
+        public RuntimeAnimatorController shadowAnimController;
+
         private void Start()
         {
             if(col == null)
                 col = GetComponent<Collider2D>();
+
+            if(playerType == PlayerType.Human)
+            {
+                anim.runtimeAnimatorController = humanAnimController;
+            }
+            if(playerType == PlayerType.Shadow)
+            {
+                anim.runtimeAnimatorController = shadowAnimController;
+            }
         }
 
         private void Update()
         {
             InsanityZone_CollisionDetection();
-            HazardZone_CollisionDetection();
+            //HazardZone_CollisionDetection();
         }
 
         void InsanityZone_CollisionDetection()
         {
             if (col.IsTouchingLayers(insanityZone) && playerType == PlayerType.Shadow)
             {
-                //GetComponent<ShadowDamage>().Counting = true;
                 ShadowDamageManager.instance.Counting = true;
             }
             else
             {
-                //GetComponent<ShadowDamage>().Counting = false;
-                //GetComponent<ShadowDamage>().ResetCurrentDamage();
-
-                ShadowDamageManager.instance.Counting = true;
+                ShadowDamageManager.instance.Counting = false;
                 ShadowDamageManager.instance.ResetCurrentDamage();
             }
         }
 
-        void HazardZone_CollisionDetection()
-        {
-            if (col.IsTouchingLayers(hazardZone) && playerType == PlayerType.Human)
-            {
-                //Play falling animation.
-                Debug.Log("Play Falling Animation here");
-            }
-        }
+        //void HazardZone_CollisionDetection()
+        //{
+        //    if (col.IsTouchingLayers(hazardZone) && playerType == PlayerType.Human)
+        //    {
+        //        //Play falling animation.
+        //        Debug.Log("Play Falling Animation here");
+        //    }
+        //}
     }
 }

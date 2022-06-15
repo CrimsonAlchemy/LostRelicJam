@@ -12,7 +12,8 @@ namespace RyanBeattie.PlayerSystems
 
         [Header("Bar Elements")]
         [Tooltip("This is the image gameobject that will be changing dynamically.")]
-        [SerializeField] Image fill;
+        //SerializeField] Image fill;
+        [SerializeField] Slider slider;
 
         private void OnEnable()
         {
@@ -26,7 +27,8 @@ namespace RyanBeattie.PlayerSystems
         public void UpdateShadowDamageBar()
         {
             //fill.fillAmount = ShadowDamage.instance.CurrentDamage / ShadowDamage.instance.MaxDamage;
-            fill.fillAmount = ShadowDamageManager.instance.CurrentShadowDamage / ShadowDamageManager.instance.MaxShadowDamage;
+            //fill.fillAmount = ShadowDamageManager.instance.CurrentShadowDamage / ShadowDamageManager.instance.MaxShadowDamage;
+            slider.value = ShadowDamageManager.instance.CurrentShadowDamage / ShadowDamageManager.instance.MaxShadowDamage;
             //Debug.Log($"{InsanitySystem.instance.CurrentInsanity} Current Insanity!");
         }
     }

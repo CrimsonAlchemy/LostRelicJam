@@ -12,12 +12,13 @@ namespace RyanBeattie.PlayerSystems
         [SerializeField] SpriteRenderer sRenderer = new SpriteRenderer();
 
         float targetEffect = 0f;
-        float currentEffect = 1f;
+        float currentEffect = 1.1f;
+        public float effectSpeed = 0.5f;
 
         public bool inLight = false;
         private void Start()
         {
-            //currentEffect = ShadowDamageManager.instance.CurrentShadowDamage;
+            currentEffect = ShadowDamageManager.instance.CurrentShadowDamage;
             //targetEffect = ShadowDamageManager.instance.MaxShadowDamage;
         }
         private void Update()
@@ -25,39 +26,45 @@ namespace RyanBeattie.PlayerSystems
             //currentEffect = Mathf.Lerp(currentEffect, targetEffect, 2f * Time.deltaTime);
 
             //TODO for testing only REMOVE before build
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                inLight = !inLight;
-            }
-            //if(currentEffect > 0)
+            //if (Input.GetKeyDown(KeyCode.Q))
             //{
-            //    inLight = true;
+            //    inLight = !inLight;
             //}
-            //else
-            //{
-            //    inLight = false;
 
-            //}
+            if (ShadowDamageManager.instance.Counting)
+            {
+                inLight = true;
+            }
+            else
+            {
+                inLight = false;
+            }
+
             if (inLight)
             {
                 StartDissolving();
             }
             if(!inLight)
             {
-                ResetDissolve();
+                if (ShadowDamageManager.instance.CurrentShadowDamage >= ShadowDamageManager.instance.MaxShadowDamage)
+                {
+                    StartDissolving();
+                    currentEffect = 0;
+                }
+                else
+                {
+                    ResetDissolve();
+                }
             }
         }
         public void StartDissolving()
         {
-            currentEffect = Mathf.MoveTowards(currentEffect, targetEffect, 0.3f * Time.deltaTime);
+            currentEffect = Mathf.MoveTowards(currentEffect, targetEffect, effectSpeed * Time.deltaTime);
             sRenderer.material.SetFloat("_BurnAmount", currentEffect);
-
-            
-
         }
         public void ResetDissolve()
         {
-            currentEffect = 1f;
+            currentEffect = 1.2f;
             sRenderer.material.SetFloat("_BurnAmount", currentEffect);
         }
 

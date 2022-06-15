@@ -12,7 +12,8 @@ namespace RyanBeattie.InsanitySystem
 
         [Header("Bar Elements")]
         [Tooltip("This is the image gameobject that will be changing dynamically.")]
-        [SerializeField] Image fill;
+        //[SerializeField] Image fill;
+        [SerializeField] Slider slider;
 
         private void OnEnable()
         {
@@ -25,8 +26,8 @@ namespace RyanBeattie.InsanitySystem
 
         public void UpdateInsanityBar(/*float currentSanity, float maxSanity*/)
         {
-            fill.fillAmount = InsanitySystem.instance.CurrentInsanity / InsanitySystem.instance.MaxInsanity;
-            //Debug.Log($"{InsanitySystem.instance.CurrentInsanity} Current Insanity!");
+            //fill.fillAmount = InsanitySystem.instance.CurrentInsanity / InsanitySystem.instance.MaxInsanity;
+            slider.value = InsanitySystem.instance.CurrentInsanity / InsanitySystem.instance.MaxInsanity;
         }
 
     }
