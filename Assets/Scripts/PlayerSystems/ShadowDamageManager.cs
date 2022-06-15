@@ -73,7 +73,6 @@ namespace RyanBeattie.PlayerSystems
             }
 
             ShadowDamageBarUI.A_UpdateShadowDamageBar?.Invoke();
-            //Debug.Log($"Current Time: {currentDamage}");
         }
 
     }

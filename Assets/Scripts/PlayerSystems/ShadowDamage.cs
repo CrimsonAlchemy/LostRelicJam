@@ -15,27 +15,28 @@ namespace RyanBeattie.PlayerSystems
         float currentEffect = 1f;
 
         public bool inLight = false;
-
-        private void OnEnable()
-        {
-            
-        }
-        private void OnDisable()
-        {
-            
-        }
         private void Start()
         {
-            currentEffect = ShadowDamageManager.instance.CurrentShadowDamage;
-            targetEffect = ShadowDamageManager.instance.MaxShadowDamage;
+            //currentEffect = ShadowDamageManager.instance.CurrentShadowDamage;
+            //targetEffect = ShadowDamageManager.instance.MaxShadowDamage;
         }
         private void Update()
         {
             //currentEffect = Mathf.Lerp(currentEffect, targetEffect, 2f * Time.deltaTime);
 
+            //TODO for testing only REMOVE before build
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 inLight = !inLight;
+            }
+            if(currentEffect > 0)
+            {
+                inLight = true;
+            }
+            else
+            {
+                inLight = false;
+
             }
             if (inLight)
             {
@@ -50,6 +51,8 @@ namespace RyanBeattie.PlayerSystems
         {
             currentEffect = Mathf.MoveTowards(currentEffect, targetEffect, 0.3f * Time.deltaTime);
             sRenderer.material.SetFloat("_BurnAmount", currentEffect);
+
+            
 
         }
         public void ResetDissolve()

@@ -6,12 +6,19 @@ namespace RyanBeattie.Iteractables
 {
     public class Bird : MonoBehaviour
     {
+        #region Attributes
         [Header("General Details")]
         public bool canInteract = false;
         public bool playerInShadow = false;
         public bool patrolling = false;
-        [SerializeField] GameObject textbox;
         public float moveSpeed = 2f;
+        [SerializeField] float maxRestingTime = 3.0f;
+
+        [Space(10)]
+        [Header("Components")]
+        [SerializeField] GameObject textbox;
+        public Animator birdAnim;
+        public GameObject absorbEffectPrefab;
 
         [Space(10)]
         [Header("Bird Move Points")]
@@ -21,29 +28,32 @@ namespace RyanBeattie.Iteractables
         public Transform[] patrolPoints;
         public Transform[] shadowAbsorbPoints;
 
+
         private int currentPatrolPoint;
         private Vector3 moveDirection;
-
         Rigidbody2D theRigidbody;
         GameObject player;
-
         bool shadowAbsorbAnim = false;
         bool resting = true;
         float restingTime = 0f;
-        float maxRestingTime = 3.0f;
+        private SpriteRenderer gfx;
+        #endregion
 
         private void Start()
         {
+            if(gfx == null)
+                gfx = GetComponentInChildren<SpriteRenderer>();
             if(theRigidbody == null)
                 theRigidbody = GetComponent<Rigidbody2D>();
             if(player == null)
-                player = FindObjectOfType<RyanBeattie.PlayerSystems.Player>().gameObject;
+                player = FindObjectOfType<PlayerSystems.Player>().gameObject;
         }
 
         private void Update()
         {
             Interact();
             BirdCurrentState();
+            AnimationHandler();
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -84,7 +94,30 @@ namespace RyanBeattie.Iteractables
             }
         }
 
-        public GameObject absorbEffectPrefab;
+        void AnimationHandler()
+        {
+            if (Vector2.Distance(transform.position, idlePoint.position) > 0.2f)
+            {
+                birdAnim.SetBool("flying", true);
+            }
+            else
+            {
+                birdAnim.SetBool("flying", false);
+            }
+
+            //Flipping the gameobject to the direction the bird is moving.
+            if (moveDirection.x > 0)
+            {
+                //transform.localScale = new Vector3(-1, 1f, 1f);
+                gfx.flipX = true;
+            }
+            else
+            {
+                //transform.localScale = new Vector3(1, 1f, 1f);
+                gfx.flipX = false;
+            }
+        }
+
         void PlayerInBirdsShadow()
         {
             if(player != null)
@@ -119,7 +152,7 @@ namespace RyanBeattie.Iteractables
             player.transform.position = new Vector2(transform.position.x, transform.position.y - 0.5f);
             player.SetActive(true);
 
-            //Testing
+            //TODO Testing Absorb Particle Effect
             AbsorbEffect[] effects = FindObjectsOfType<AbsorbEffect>();
             foreach (var effect in effects)
             {
