@@ -14,6 +14,10 @@ namespace RyanBeattie.Iteractables
         public float moveSpeed = 2f;
         [SerializeField] float maxRestingTime = 3.0f;
 
+        [Header("Pit Layer Mask Detection")]
+        public LayerMask pitLayer;
+        public BoxCollider2D pitDetectionBox;
+
         [Space(10)]
         [Header("Components")]
         [SerializeField] GameObject textbox;
@@ -73,23 +77,43 @@ namespace RyanBeattie.Iteractables
             }
         }
 
+        
         public void Interact()
         {
-            if (canInteract/* || playerInShadow*/)
+            if (canInteract)
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    playerInShadow = !playerInShadow;
-
-                    if (playerInShadow)
+                    //To detect if the player is over a pit or not
+                    if (!playerInShadow)
                     {
+                        playerInShadow = !playerInShadow;
                         PlayerInBirdsShadow();
                         textbox.SetActive(true);
                     }
-                    else
+                    else if(playerInShadow && !pitDetectionBox.IsTouchingLayers(pitLayer))
                     {
+                        playerInShadow = !playerInShadow;
                         PlayerExitingBirdsShadow();
                     }
+
+                    #region Old Code
+                    //if (!pitDetectionBox.IsTouchingLayers(pitLayer))
+                    //{
+                    //    playerInShadow = !playerInShadow;
+
+                    //    if (playerInShadow)
+                    //    {
+                    //        PlayerInBirdsShadow();
+                    //        textbox.SetActive(true);
+                    //    }
+                    //    else
+                    //    {
+                    //        PlayerExitingBirdsShadow();
+                    //    }
+
+                    //}
+                    #endregion
                 }
             }
         }
