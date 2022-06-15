@@ -9,8 +9,8 @@ namespace DhruvS28.TileSystem
 {
     public class TileLighting : MonoBehaviour
     {
-
-        private List<Vector3> tilePositions;
+        [HideInInspector]
+        public List<Vector3> tilePositions;
 
         public GameObject torches;
         public GameObject lightPrefab;
