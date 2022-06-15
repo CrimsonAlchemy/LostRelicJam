@@ -13591,8 +13591,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6b4cd6bef302ad43ab5ebf2a8ff7707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileP: []
   tilePositions: []
-  torches: {fileID: 278845151}
+  lightSorting: {fileID: 278845151}
   lightPrefab: {fileID: 6312163049838231934, guid: ab4f95749bbec254393d055130344d60, type: 3}
 --- !u!1 &1552982369
 GameObject:
@@ -14112,13 +14113,15 @@ GameObject:
   - component: {fileID: 1588762612}
   - component: {fileID: 1588762611}
   - component: {fileID: 1588762613}
+  - component: {fileID: 1588762615}
+  - component: {fileID: 1588762614}
   m_Layer: 0
   m_Name: Firefly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1588762609
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14276,7 +14279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8f39aac60af76f409583aecc24b4ea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3.3
+  moveSpeed: 2
   fireflyPathing:
   - direction: 1
     distance: 5
@@ -14308,6 +14311,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1588762614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588762608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 864c4cd6e61e4894f92116b37a38707d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &1588762615
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588762608}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1627381523
 GameObject:
   m_ObjectHideFlags: 0

@@ -36,6 +36,7 @@ namespace DhruvS28.LightSystem
         [Space(10)]
 
         private bool moving;
+        private bool paused;
         private Transform startPoint;
         private Vector3 moveDirection;
 
@@ -57,26 +58,26 @@ namespace DhruvS28.LightSystem
         {
             if (theRigidbody == null)
                 theRigidbody = GetComponent<Rigidbody2D>();
-            //if (player == null)
-            //    player = FindObjectOfType<RyanBeattie.PlayerSystems.Player>().gameObject;
 
             startPoint = this.transform;
             timestamp = Time.time + 2f;
 
+            movePoints.Add(startPoint.position);
             GetPositionPoints();
         }
 
         private void Update()
         {
-            //FlyingAroundState();
-            //CheckPosition();
-            if (timestamp <= Time.time && !moving)
-            {
-                timestamp = Time.time + 1f;
-                Debug.Log("1 second delay");
-                moving = true;
-            }
-            Moving();
+
+            //if (timestamp <= Time.time && !moving)
+            //{
+            //    timestamp = Time.time + 1f;
+            //    Debug.Log("1 second delay");
+            //    moving = true;
+            //}
+
+            if (!paused)
+                Moving();
         }
 
         void GetPositionPoints()
@@ -89,16 +90,16 @@ namespace DhruvS28.LightSystem
                 switch ((point.direction).ToString())
                 {
                     case "Up":
-                        moveDirection = new Vector3(transform.position.x, transform.position.y + point.distance, transform.position.z);
+                        moveDirection = new Vector3(movePoints[movePoints.Count-1].x, movePoints[movePoints.Count-1].y + point.distance, movePoints[movePoints.Count-1].z);
                         break;
                     case "Right":
-                        moveDirection = new Vector3(transform.position.x + point.distance, transform.position.y, transform.position.z);
+                        moveDirection = new Vector3(movePoints[movePoints.Count-1].x + point.distance, movePoints[movePoints.Count-1].y, movePoints[movePoints.Count-1].z);
                         break;
                     case "Down":
-                        moveDirection = new Vector3(transform.position.x, transform.position.y - point.distance, transform.position.z);
+                        moveDirection = new Vector3(movePoints[movePoints.Count-1].x, movePoints[movePoints.Count-1].y - point.distance, movePoints[movePoints.Count-1].z);
                         break;
                     case "Left":
-                        moveDirection = new Vector3(transform.position.x - point.distance, transform.position.y, transform.position.z);
+                        moveDirection = new Vector3(movePoints[movePoints.Count-1].x - point.distance, movePoints[movePoints.Count-1].y, movePoints[movePoints.Count-1].z);
                         break;
                     default:
                         break;
@@ -108,25 +109,7 @@ namespace DhruvS28.LightSystem
             }
         }
 
-        private IEnumerator move()
-        {
-            //Vector3 goingTO = movePoints[currentPoint] - transform.position;
 
-            //if (Vector2.Distance(transform.position, movePoints[currentPoint]) < 0.1f)
-            //{
-                yield return new WaitForSeconds(0.5f);
-            //    Debug.Log(transform.position);
-            //    currentPoint++;
-            //    if (currentPoint >= movePoints.Count)
-            //    {
-            //        currentPoint = 0;
-            //    }
-            //}
-            //goingTO.Normalize();
-            //theRigidbody.velocity = goingTO * moveSpeed;
-
-            //yield return move();
-        }
 
 
         void Moving()
@@ -136,7 +119,7 @@ namespace DhruvS28.LightSystem
             if (Vector2.Distance(transform.position, movePoints[currentPoint]) < 0.1f)
             {
                 transform.position = movePoints[currentPoint];
-                Debug.Log(transform.position);
+                //StartCoroutine(PauseMoving());
                 currentPoint++;
                 if (currentPoint >= movePoints.Count)
                 {
@@ -146,5 +129,12 @@ namespace DhruvS28.LightSystem
             goingTO.Normalize();
             theRigidbody.velocity = goingTO * moveSpeed;
         }
+
+        //private IEnumerator PauseMoving()
+        //{
+        //    paused = true;
+        //    yield return new WaitForSeconds(1f);
+        //    paused = false;
+        //} 
     }
 }

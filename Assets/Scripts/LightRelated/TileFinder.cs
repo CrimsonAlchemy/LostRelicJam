@@ -9,7 +9,7 @@ namespace DhruvS28.TileSystem
     public class TileFinder : MonoBehaviour
     {
         
-        public List<Vector3> tilePositions;
+        public List<Vector3> tileP;
  
         // Start is called before the first frame update
         public List<Vector3> GetTiles()
@@ -24,10 +24,10 @@ namespace DhruvS28.TileSystem
                 }
 
                 // Tile is not empty; do stuff.
-                tilePositions.Add(position);
+                tileP.Add(position);
             }
 
-            return tilePositions;
+            return tileP;
         }
     }
 }
