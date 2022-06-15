@@ -14,9 +14,9 @@ namespace RyanBeattie.Iteractables
         public float moveSpeed = 2f;
         [SerializeField] float maxRestingTime = 3.0f;
 
-        [Header("Pit Layer Mask Detection")]
-        public LayerMask pitLayer;
-        public BoxCollider2D pitDetectionBox;
+        [Header("UnWalkable Layer Mask Detection")]
+        public LayerMask unWalkableLayers;
+        public BoxCollider2D unWalkableDetectionBox;
 
         [Space(10)]
         [Header("Components")]
@@ -91,7 +91,7 @@ namespace RyanBeattie.Iteractables
                         PlayerInBirdsShadow();
                         textbox.SetActive(true);
                     }
-                    else if(playerInShadow && !pitDetectionBox.IsTouchingLayers(pitLayer))
+                    else if(playerInShadow && !unWalkableDetectionBox.IsTouchingLayers(unWalkableLayers))
                     {
                         playerInShadow = !playerInShadow;
                         PlayerExitingBirdsShadow();

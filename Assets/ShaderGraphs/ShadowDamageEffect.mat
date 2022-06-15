@@ -56,7 +56,7 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _Blend: 0
-    - _BurnAmount: 1.1
+    - _BurnAmount: 1.2
     - _CastShadows: 1
     - _Cull: 2
     - _DstBlend: 10
