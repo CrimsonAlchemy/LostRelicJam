@@ -13,13 +13,14 @@ public class CameraFollow : MonoBehaviour
     void Start()
     {
         speed = 0.125f;
-
+        
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void LateUpdate()
     {
-        transform.position = new Vector3(player.position.x, player.position.y, -1f); 
+        if(player != null)
+            transform.position = new Vector3(player.position.x, player.position.y, -1f); 
     }
 }
 

@@ -5,9 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Movement Variables")]
+    [Header("Player Variables")]
     [Tooltip("The speed at which the player will be moving.")]
     [Range(1, 15)] public float moveSpeed;
+    public bool canMove = true;
 
     Vector2 moveInput;
 
@@ -15,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
     [Header("Components")]
     [Tooltip("The Players GFX Sprite Renderer component for the player.")]
     public SpriteRenderer gfx;
-
     Rigidbody2D playerRigidbody;
 
     void Start()
@@ -26,13 +26,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        moveInput.x = Input.GetAxisRaw("Horizontal");
-        moveInput.y = Input.GetAxisRaw("Vertical");
+        if (canMove)
+        {
+            moveInput.x = Input.GetAxisRaw("Horizontal");
+            moveInput.y = Input.GetAxisRaw("Vertical");
+        }
     }
 
     void FixedUpdate()
     {
-        PlayerMovementInputHandler();
+        if(canMove)
+            PlayerMovementInputHandler();
     }
     private void PlayerMovementInputHandler()
     {

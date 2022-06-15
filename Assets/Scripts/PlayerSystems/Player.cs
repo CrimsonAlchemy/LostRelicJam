@@ -22,8 +22,11 @@ namespace RyanBeattie.PlayerSystems
         [Header("Collision Detection")]
         [Tooltip("This is the layermask that the player will eithe be damaged or safe from.")]
         public LayerMask insanityZone;
+        public LayerMask hazardZone;
 
         public bool canDamage = false;
+
+        public Animator anim;
 
         private void Start()
         {
@@ -34,6 +37,7 @@ namespace RyanBeattie.PlayerSystems
         private void Update()
         {
             InsanityZone_CollisionDetection();
+            HazardZone_CollisionDetection();
         }
 
         void InsanityZone_CollisionDetection()
@@ -50,6 +54,15 @@ namespace RyanBeattie.PlayerSystems
 
                 ShadowDamageManager.instance.Counting = true;
                 ShadowDamageManager.instance.ResetCurrentDamage();
+            }
+        }
+
+        void HazardZone_CollisionDetection()
+        {
+            if (col.IsTouchingLayers(hazardZone) && playerType == PlayerType.Human)
+            {
+                //Play falling animation.
+                Debug.Log("Play Falling Animation here");
             }
         }
     }

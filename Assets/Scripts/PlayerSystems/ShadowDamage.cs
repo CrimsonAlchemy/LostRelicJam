@@ -29,15 +29,15 @@ namespace RyanBeattie.PlayerSystems
             {
                 inLight = !inLight;
             }
-            if(currentEffect > 0)
-            {
-                inLight = true;
-            }
-            else
-            {
-                inLight = false;
+            //if(currentEffect > 0)
+            //{
+            //    inLight = true;
+            //}
+            //else
+            //{
+            //    inLight = false;
 
-            }
+            //}
             if (inLight)
             {
                 StartDissolving();
