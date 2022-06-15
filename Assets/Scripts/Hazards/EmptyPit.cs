@@ -10,6 +10,8 @@ namespace RyanBeattie.Hazards
         public GameObject shadowFallingAnim;
         public Sprite human;
         public Sprite shadow;
+
+        //This to play the human or shadow animation.
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.CompareTag("Player"))

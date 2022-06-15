@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Components")]
     [Tooltip("The Players GFX Sprite Renderer component for the player.")]
     public SpriteRenderer gfx;
+    public Animator anim;
     Rigidbody2D playerRigidbody;
 
     void Start()
@@ -40,6 +41,9 @@ public class PlayerMovement : MonoBehaviour
     }
     private void PlayerMovementInputHandler()
     {
+
+        MoveAnimHandler();
+
         if (moveInput.x > 0)
         {
             gameObject.GetComponent<Transform>().eulerAngles = new Vector3(0, 0, 0);
@@ -56,5 +60,18 @@ public class PlayerMovement : MonoBehaviour
         moveInput.Normalize();
         playerRigidbody.velocity = moveInput * moveSpeed;
 
+    }
+
+    void MoveAnimHandler()
+    {
+        if(moveInput != Vector2.zero)
+        {
+            anim.SetBool("moving", true);
+        }
+        else
+        {
+            anim.SetBool("moving", false);
+
+        }
     }
 }
