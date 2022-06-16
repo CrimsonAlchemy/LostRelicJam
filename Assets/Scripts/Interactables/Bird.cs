@@ -41,6 +41,7 @@ namespace RyanBeattie.Iteractables
         bool resting = true;
         float restingTime = 0f;
         private SpriteRenderer gfx;
+        bool hasPlayedAudio = false;
         #endregion
 
         private void Start()
@@ -206,6 +207,8 @@ namespace RyanBeattie.Iteractables
                 RestingState();
             }
         }
+
+        
         void RestingState()
         {
             if(Vector2.Distance(transform.position, idlePoint.position) > 0.2f && resting)
@@ -216,13 +219,20 @@ namespace RyanBeattie.Iteractables
             if(Vector2.Distance(transform.position, idlePoint.position) < 0.2f && resting)
             {
                 transform.position = idlePoint.position;
-                if(restingTime < maxRestingTime)
+
+                if (restingTime < maxRestingTime)
                 {
                     restingTime += Time.deltaTime;
                 }
             }
             if(restingTime >= maxRestingTime)
             {
+                //TODO audio Testing
+                if (!hasPlayedAudio)
+                {
+                    AudioManager.instance.PlayBirdSound();
+                    hasPlayedAudio = true;
+                }
                 FlyingAroundState();
             }
         }
@@ -240,6 +250,7 @@ namespace RyanBeattie.Iteractables
                     resting = true;
                     currentPatrolPoint = 0;
                     restingTime = 0;
+                    hasPlayedAudio = false;
                     RestingState();
                 }
             }

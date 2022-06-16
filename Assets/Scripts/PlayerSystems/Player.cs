@@ -26,10 +26,11 @@ namespace RyanBeattie.PlayerSystems
 
         public bool canDamage = false;
 
+        [Header("Animation Details")]
         public Animator anim;
-
         public RuntimeAnimatorController humanAnimController;
         public RuntimeAnimatorController shadowAnimController;
+
 
         private void Start()
         {
