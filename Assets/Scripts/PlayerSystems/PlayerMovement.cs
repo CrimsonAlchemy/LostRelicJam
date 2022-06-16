@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     public Animator anim;
     Rigidbody2D playerRigidbody;
 
+
+
     void Start()
     {
         if(playerRigidbody == null)
@@ -32,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
             moveInput.x = Input.GetAxisRaw("Horizontal");
             moveInput.y = Input.GetAxisRaw("Vertical");
         }
+
     }
 
     void FixedUpdate()
@@ -54,7 +57,6 @@ public class PlayerMovement : MonoBehaviour
         {
             gameObject.GetComponent<Transform>().eulerAngles = new Vector3(0, 180, 0);
             //bodySR.flipX = false;
-
         }
 
         moveInput.Normalize();
@@ -67,11 +69,20 @@ public class PlayerMovement : MonoBehaviour
         if(moveInput != Vector2.zero)
         {
             anim.SetBool("moving", true);
+            if(GetComponent<RyanBeattie.PlayerSystems.Player>().playerType == RyanBeattie.PlayerSystems.PlayerType.Human)
+            {
+                AudioManager.instance.isWalking = true;
+                AudioManager.instance.PlayFootsteps();
+            }
         }
         else
         {
             anim.SetBool("moving", false);
-
+            if (GetComponent<RyanBeattie.PlayerSystems.Player>().playerType == RyanBeattie.PlayerSystems.PlayerType.Human)
+            {
+                AudioManager.instance.isWalking = false;
+                AudioManager.instance.PlayFootsteps();
+            }
         }
     }
 }
