@@ -66,6 +66,7 @@ namespace RyanBeattie.PlayerSystems
             {
                 CurrentShadowDamage = MaxShadowDamage;
                 counting = false;
+                Player.A_PlayerDeath?.Invoke();
             }
             else
             {

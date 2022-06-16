@@ -66,7 +66,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -915,7 +915,6 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PhysicalPlayer_32: -1176377048
       PhysicalPlayer_17: -1031366513
       PhysicalPlayer_4: -1316946988
       PhysicalPlayer_9: -1219376152
@@ -946,10 +945,11 @@ TextureImporter:
       PhysicalPlayer_0: 1972686488
       PhysicalPlayer_5: -2074990607
       PhysicalPlayer_20: -1536028366
-      PhysicalPlayer_23: -2069937064
+      PhysicalPlayer_32: -1176377048
       PhysicalPlayer_21: -1129192972
-      PhysicalPlayer_29: 1216750645
+      PhysicalPlayer_23: -2069937064
       PhysicalPlayer_22: 263057287
+      PhysicalPlayer_29: 1216750645
       PhysicalPlayer_30: 1883959788
       PhysicalPlayer_1: -70113501
   spritePackingTag: 

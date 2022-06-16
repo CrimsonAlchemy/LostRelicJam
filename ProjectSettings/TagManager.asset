@@ -44,11 +44,11 @@ TagManager:
   - name: Tiles
     uniqueID: 1268583531
     locked: 0
-  - name: NoLightTiles
-    uniqueID: 769687857
-    locked: 0
   - name: Entity
     uniqueID: 480828309
+    locked: 0
+  - name: NoLightTiles
+    uniqueID: 769687857
     locked: 0
   - name: ParticleEffects
     uniqueID: 1221321831

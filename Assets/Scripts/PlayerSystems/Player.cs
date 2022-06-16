@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace RyanBeattie.PlayerSystems
 {
@@ -13,6 +14,8 @@ namespace RyanBeattie.PlayerSystems
     //[RequireComponent(typeof(ShadowDamage))]
     public class Player : MonoBehaviour
     {
+        public static Action A_PlayerDeath;
+
         [Header("Player Details")]
         [Tooltip("This is to choose whether the player is a human or a shadow character.")]
         public PlayerType playerType;
@@ -30,8 +33,18 @@ namespace RyanBeattie.PlayerSystems
         public Animator anim;
         public RuntimeAnimatorController humanAnimController;
         public RuntimeAnimatorController shadowAnimController;
+        public GameObject shadowDeathEffect;
 
+        private void OnEnable()
+        {
+            A_PlayerDeath += Die;
+        }
 
+        private void OnDisable()
+        {
+            A_PlayerDeath -= Die;
+            
+        }
         private void Start()
         {
             if(col == null)
@@ -63,6 +76,20 @@ namespace RyanBeattie.PlayerSystems
             {
                 ShadowDamageManager.instance.Counting = false;
                 ShadowDamageManager.instance.ResetCurrentDamage();
+            }
+        }
+
+        public void Die()
+        {
+            //TODO Player Death here
+            if(playerType == PlayerType.Shadow)
+            {
+                Instantiate(shadowDeathEffect, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            }
+            if (playerType == PlayerType.Human)
+            {
+
             }
         }
 

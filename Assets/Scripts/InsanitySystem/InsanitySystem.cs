@@ -59,6 +59,7 @@ namespace RyanBeattie.InsanitySystem
                 CurrentInsanity = MaxInsanity;
                 counting = false;
                 //TODO The player death goes here
+                PlayerSystems.Player.A_PlayerDeath?.Invoke();
             }
             else { CurrentInsanity += Time.deltaTime; }
 
