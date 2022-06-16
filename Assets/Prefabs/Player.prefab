@@ -4863,7 +4863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c36fc6f4fb0a9e4eaef862a3af58bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerType: 0
+  playerType: 1
   insanityZone:
     serializedVersion: 2
     m_Bits: 128
@@ -4924,8 +4924,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.2}
-  m_Size: {x: 0.5, y: 1.2}
+  m_Offset: {x: 0.1, y: -0.46}
+  m_Size: {x: 0.5, y: 0.91}
   m_Direction: 0
 --- !u!114 &1621435767
 MonoBehaviour:

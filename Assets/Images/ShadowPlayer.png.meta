@@ -135,8 +135,8 @@ TextureImporter:
         y: 16
         width: 17
         height: 29
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -152,9 +152,9 @@ TextureImporter:
       name: ShadowPlayer_1
       rect:
         serializedVersion: 2
-        x: 88
+        x: 87
         y: 16
-        width: 22
+        width: 19
         height: 29
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -165,6 +165,27 @@ TextureImporter:
       bones: []
       spriteID: 2b384e49030f683428619090637d087d
       internalID: 155190406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShadowPlayer_2
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 16
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59038d861adc5774384f38771b592291
+      internalID: 660227558
       vertices: []
       indices: 
       edges: []
@@ -181,6 +202,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       ShadowPlayer_1: 155190406
+      ShadowPlayer_2: 660227558
       ShadowPlayer_0: -1816852433
   spritePackingTag: 
   pSDRemoveMatte: 0
