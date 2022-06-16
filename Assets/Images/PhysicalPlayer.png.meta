@@ -131,10 +131,10 @@ TextureImporter:
       name: PhysicalPlayer_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 15
-        width: 19
-        height: 31
+        x: 18
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,10 +152,10 @@ TextureImporter:
       name: PhysicalPlayer_1
       rect:
         serializedVersion: 2
-        x: 87
-        y: 15
-        width: 19
-        height: 30
+        x: 82
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,10 +173,10 @@ TextureImporter:
       name: PhysicalPlayer_2
       rect:
         serializedVersion: 2
-        x: 150
-        y: 15
-        width: 23
-        height: 31
+        x: 146
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,10 +194,10 @@ TextureImporter:
       name: PhysicalPlayer_3
       rect:
         serializedVersion: 2
-        x: 211
-        y: 17
-        width: 26
-        height: 30
+        x: 210
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,10 +215,10 @@ TextureImporter:
       name: PhysicalPlayer_4
       rect:
         serializedVersion: 2
-        x: 279
-        y: 15
-        width: 19
-        height: 31
+        x: 274
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,10 +236,10 @@ TextureImporter:
       name: PhysicalPlayer_5
       rect:
         serializedVersion: 2
-        x: 344
-        y: 15
-        width: 21
-        height: 31
+        x: 338
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,10 +257,10 @@ TextureImporter:
       name: PhysicalPlayer_6
       rect:
         serializedVersion: 2
-        x: 407
-        y: 17
-        width: 22
-        height: 30
+        x: 402
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,10 +278,10 @@ TextureImporter:
       name: PhysicalPlayer_7
       rect:
         serializedVersion: 2
-        x: 471
-        y: 15
-        width: 19
-        height: 31
+        x: 466
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -299,10 +299,10 @@ TextureImporter:
       name: PhysicalPlayer_8
       rect:
         serializedVersion: 2
-        x: 536
-        y: 15
-        width: 17
-        height: 29
+        x: 530
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -320,10 +320,10 @@ TextureImporter:
       name: PhysicalPlayer_9
       rect:
         serializedVersion: 2
-        x: 600
-        y: 15
-        width: 17
-        height: 30
+        x: 594
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -341,10 +341,10 @@ TextureImporter:
       name: PhysicalPlayer_10
       rect:
         serializedVersion: 2
-        x: 663
-        y: 15
-        width: 19
-        height: 31
+        x: 658
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -362,10 +362,10 @@ TextureImporter:
       name: PhysicalPlayer_11
       rect:
         serializedVersion: 2
-        x: 728
-        y: 15
-        width: 21
-        height: 28
+        x: 722
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -383,10 +383,10 @@ TextureImporter:
       name: PhysicalPlayer_12
       rect:
         serializedVersion: 2
-        x: 792
-        y: 15
-        width: 21
-        height: 28
+        x: 786
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -404,10 +404,10 @@ TextureImporter:
       name: PhysicalPlayer_13
       rect:
         serializedVersion: 2
-        x: 856
-        y: 15
-        width: 20
-        height: 29
+        x: 850
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -425,10 +425,10 @@ TextureImporter:
       name: PhysicalPlayer_14
       rect:
         serializedVersion: 2
-        x: 920
-        y: 15
-        width: 19
-        height: 30
+        x: 914
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -446,10 +446,10 @@ TextureImporter:
       name: PhysicalPlayer_15
       rect:
         serializedVersion: 2
-        x: 983
-        y: 15
-        width: 19
-        height: 31
+        x: 978
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -467,10 +467,10 @@ TextureImporter:
       name: PhysicalPlayer_16
       rect:
         serializedVersion: 2
-        x: 1049
-        y: 15
-        width: 21
-        height: 31
+        x: 1042
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -488,10 +488,10 @@ TextureImporter:
       name: PhysicalPlayer_17
       rect:
         serializedVersion: 2
-        x: 1113
-        y: 15
-        width: 17
-        height: 47
+        x: 1106
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -509,10 +509,10 @@ TextureImporter:
       name: PhysicalPlayer_18
       rect:
         serializedVersion: 2
-        x: 1176
-        y: 15
-        width: 17
-        height: 31
+        x: 1170
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -530,10 +530,10 @@ TextureImporter:
       name: PhysicalPlayer_19
       rect:
         serializedVersion: 2
-        x: 1239
-        y: 13
-        width: 19
-        height: 33
+        x: 1234
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -551,10 +551,10 @@ TextureImporter:
       name: PhysicalPlayer_20
       rect:
         serializedVersion: 2
-        x: 1303
-        y: 13
-        width: 19
-        height: 33
+        x: 1298
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -572,10 +572,10 @@ TextureImporter:
       name: PhysicalPlayer_21
       rect:
         serializedVersion: 2
-        x: 1366
-        y: 13
-        width: 23
-        height: 33
+        x: 1362
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -593,10 +593,10 @@ TextureImporter:
       name: PhysicalPlayer_22
       rect:
         serializedVersion: 2
-        x: 1430
-        y: 13
-        width: 22
-        height: 33
+        x: 1426
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -614,10 +614,10 @@ TextureImporter:
       name: PhysicalPlayer_23
       rect:
         serializedVersion: 2
-        x: 1494
-        y: 13
-        width: 22
-        height: 33
+        x: 1490
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -635,10 +635,10 @@ TextureImporter:
       name: PhysicalPlayer_24
       rect:
         serializedVersion: 2
-        x: 1558
-        y: 13
-        width: 23
-        height: 33
+        x: 1554
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -656,10 +656,10 @@ TextureImporter:
       name: PhysicalPlayer_25
       rect:
         serializedVersion: 2
-        x: 1620
-        y: 13
-        width: 25
-        height: 31
+        x: 1618
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -677,10 +677,10 @@ TextureImporter:
       name: PhysicalPlayer_26
       rect:
         serializedVersion: 2
-        x: 1686
-        y: 13
-        width: 23
-        height: 28
+        x: 1682
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -698,10 +698,10 @@ TextureImporter:
       name: PhysicalPlayer_27
       rect:
         serializedVersion: 2
-        x: 1750
-        y: 13
-        width: 23
-        height: 27
+        x: 1746
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -719,10 +719,10 @@ TextureImporter:
       name: PhysicalPlayer_28
       rect:
         serializedVersion: 2
-        x: 1814
-        y: 13
-        width: 23
-        height: 24
+        x: 1810
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -740,10 +740,10 @@ TextureImporter:
       name: PhysicalPlayer_29
       rect:
         serializedVersion: 2
-        x: 1879
-        y: 13
-        width: 22
-        height: 21
+        x: 1874
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -761,10 +761,10 @@ TextureImporter:
       name: PhysicalPlayer_30
       rect:
         serializedVersion: 2
-        x: 1942
-        y: 13
-        width: 23
-        height: 19
+        x: 1938
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -782,10 +782,10 @@ TextureImporter:
       name: PhysicalPlayer_31
       rect:
         serializedVersion: 2
-        x: 2006
-        y: 13
-        width: 23
-        height: 15
+        x: 2002
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -803,10 +803,10 @@ TextureImporter:
       name: PhysicalPlayer_32
       rect:
         serializedVersion: 2
-        x: 2070
-        y: 13
-        width: 22
-        height: 13
+        x: 2066
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -824,10 +824,10 @@ TextureImporter:
       name: PhysicalPlayer_33
       rect:
         serializedVersion: 2
-        x: 2134
-        y: 13
-        width: 22
-        height: 8
+        x: 2130
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -845,10 +845,10 @@ TextureImporter:
       name: PhysicalPlayer_34
       rect:
         serializedVersion: 2
-        x: 2202
-        y: 13
-        width: 16
-        height: 7
+        x: 2194
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -866,10 +866,10 @@ TextureImporter:
       name: PhysicalPlayer_35
       rect:
         serializedVersion: 2
-        x: 2266
-        y: 13
-        width: 15
-        height: 6
+        x: 2258
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -887,10 +887,10 @@ TextureImporter:
       name: PhysicalPlayer_36
       rect:
         serializedVersion: 2
-        x: 2335
-        y: 14
-        width: 6
-        height: 5
+        x: 2322
+        y: 0
+        width: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
