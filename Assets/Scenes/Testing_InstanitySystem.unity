@@ -4804,7 +4804,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
 --- !u!1 &817904973
@@ -13777,6 +13777,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13bc8c80c0f95d540a6ad17ef3056f3b, type: 3}
+--- !u!1001 &597852373634207328
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 597852372536705231, guid: 1a26b36e876889f47a0eacbcbe251874, type: 3}
+      propertyPath: m_Name
+      value: Bonfire
+      objectReference: {fileID: 0}
+    - target: {fileID: 597852372536705234, guid: 1a26b36e876889f47a0eacbcbe251874, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 597852372536705234, guid: 1a26b36e876889f47a0eacbcbe251874, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 597852372536705234, guid: 1a26b36e876889f47a0eacbcbe251874, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 597852372536705234, guid: 1a26b36e876889f47a0eacbcbe251874, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 597852372536705234, guid: 1a26b36e876889f47a0eacbcbe251874, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 597852372536705234, guid: 1a26b36e876889f47a0eacbcbe251874, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 597852372536705234, guid: 1a26b36e876889f47a0eacbcbe251874, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 597852372536705234, guid: 1a26b36e876889f47a0eacbcbe251874, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 597852372536705234, guid: 1a26b36e876889f47a0eacbcbe251874, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 597852372536705234, guid: 1a26b36e876889f47a0eacbcbe251874, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 597852372536705234, guid: 1a26b36e876889f47a0eacbcbe251874, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1a26b36e876889f47a0eacbcbe251874, type: 3}
 --- !u!1001 &1253662413034069071
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13787,15 +13844,19 @@ PrefabInstance:
     - target: {fileID: 574738252, guid: 860a65cbfece9e64faf7153accdbd867, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: eaba286feb34f504e9c02059ff88fd6a, type: 2}
+      objectReference: {fileID: 9100000, guid: f740b929cd8f2094abf671919c80e3dc, type: 2}
     - target: {fileID: 1621435767, guid: 860a65cbfece9e64faf7153accdbd867, type: 3}
       propertyPath: effectSpeed
       value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 1253662413504466600, guid: 860a65cbfece9e64faf7153accdbd867, type: 3}
       propertyPath: playerType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1253662413504466600, guid: 860a65cbfece9e64faf7153accdbd867, type: 3}
+      propertyPath: shadowAnimController
+      value: 
+      objectReference: {fileID: 9100000, guid: eaba286feb34f504e9c02059ff88fd6a, type: 2}
     - target: {fileID: 1253662413504466601, guid: 860a65cbfece9e64faf7153accdbd867, type: 3}
       propertyPath: m_Size.y
       value: 0.64469266
@@ -13865,9 +13926,21 @@ PrefabInstance:
       value: PhysicalPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 1253662414636059483, guid: 860a65cbfece9e64faf7153accdbd867, type: 3}
+      propertyPath: m_Size.x
+      value: 1.1875
+      objectReference: {fileID: 0}
+    - target: {fileID: 1253662414636059483, guid: 860a65cbfece9e64faf7153accdbd867, type: 3}
+      propertyPath: m_Size.y
+      value: 1.8125
+      objectReference: {fileID: 0}
+    - target: {fileID: 1253662414636059483, guid: 860a65cbfece9e64faf7153accdbd867, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -17963071, guid: 4f159ca0fd83b8045814bcd27647bc4a, type: 3}
+    - target: {fileID: 1253662414636059483, guid: 860a65cbfece9e64faf7153accdbd867, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1253662414636059484, guid: 860a65cbfece9e64faf7153accdbd867, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
