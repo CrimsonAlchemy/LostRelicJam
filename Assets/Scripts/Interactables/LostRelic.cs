@@ -40,9 +40,7 @@ namespace RyanBeattie.Iteractables
                 {
                     Debug.Log("Interacted with the Lost Relic.");
                     RelicCutsceneManager.instance.PlayRelic_Cutscene();
-
                 }
-                //TODO do action here when interacting
             }
         }
     }
