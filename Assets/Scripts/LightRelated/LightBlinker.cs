@@ -6,7 +6,7 @@ using UnityEngine.Rendering.Universal;
 
 namespace DhruvS28.LightSystem
 {
-    public class LightFlicker : MonoBehaviour
+    public class LightBlinker : MonoBehaviour
     {
 
         Transform mainLight;
