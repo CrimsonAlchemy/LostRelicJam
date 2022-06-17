@@ -17,8 +17,6 @@ namespace DhruvS28.LightSystem
         void Start()
         {
             blinkerLight = this.transform;
-            //blinkerLight = this.transform.GetChild(0);
-            //mainLightComponent = mainLight.GetComponent<Light2D>();
             blinkerLightComponent = blinkerLight.GetComponent<Light2D>();
 
             StartCoroutine(Blinker());
@@ -26,7 +24,6 @@ namespace DhruvS28.LightSystem
 
         IEnumerator Blinker()
         {
-            //float flikcerTime = Random.Range(10f, 20f);
             float blinkerTime = 15f;
             float change = -0.1f;
 
@@ -40,24 +37,10 @@ namespace DhruvS28.LightSystem
                     yield return new WaitForSeconds(1f);
                     change = -0.1f;
                 }
-                //float randomIntensity = Random.Range(0.5f, 1f);
-                //flickerLightComponent.intensity = randomIntensity;
-
-                //float randomTime = Random.Range(0.05f, 0.15f);
-                //Debug.Log("Blinking: " + i);
                 blinkerLightComponent.intensity += change;
 
                 yield return new WaitForSeconds(0.01f);
             }
-            //yield return new WaitForSeconds(1f);
-            //yield return StartCoroutine(Blinker());
         }
-
-        //IEnumerator FlickerDelay()
-        //{
-        //    float randomTime = Random.Range(0.5f, 1.2f);
-        //    yield return new WaitForSeconds(randomTime);
-        //    yield return StartCoroutine(Flicker());
-        //}
     }
 }
