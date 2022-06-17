@@ -155,7 +155,7 @@ namespace RyanBeattie.Iteractables
                 player.GetComponent<PlayerMovement>().enabled = false;
                 FindObjectOfType<CameraFollow>().player = gameObject.transform;
 
-                //Testing
+                //TODO Testing absord effect
                 GameObject asorbEffect;
                 asorbEffect = absorbEffectPrefab;
                 asorbEffect.GetComponent<AbsorbEffect>().shadowMovePoints = shadowAbsorbPoints;
@@ -183,6 +183,11 @@ namespace RyanBeattie.Iteractables
             {
                 Destroy(effect.gameObject);
             }
+
+            GameObject asorbEffect;
+            asorbEffect = absorbEffectPrefab;
+            asorbEffect.GetComponent<AbsorbEffect>().shadowMovePoints = player.GetComponent<PlayerSystems.Player>().shadowAbsorbPoints;
+            Instantiate(asorbEffect, player.transform.position, Quaternion.identity);
 
         }
 

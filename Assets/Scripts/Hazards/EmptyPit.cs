@@ -29,6 +29,10 @@ namespace RyanBeattie.Hazards
                 shadowFallingAnim.transform.position = transform.position;
                 Destroy(collision.gameObject);
                 shadowFallingAnim.SetActive(true);
+
+                //TODO Audio Testing for pit fall
+                AudioManager.instance.StopFeetsteps();
+                AudioManager.instance.StopHeartbeat();
             }
         }
     }

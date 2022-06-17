@@ -22,7 +22,16 @@ namespace RyanBeattie.InsanitySystem
 
         private void Update()
         {
-            if (counting) { InsanityIncreaseTimer(); }
+            if (counting)
+            { 
+                InsanityIncreaseTimer();
+                AudioManager.instance.PlayHeartbeat();
+            }
+            if (!counting)
+            {
+
+                AudioManager.instance.StopHeartbeat();
+            }
         }
         public bool Counting
         {

@@ -11,9 +11,16 @@ namespace RyanBeattie.PlayerSystems
         float currentShadowDamage = 0f;
         bool counting = false;
 
+        GameObject player;
+
         private void Awake()
         {
             instance = this;
+        }
+
+        private void Start()
+        {
+            player = FindObjectOfType<PlayerSystems.Player>().gameObject;
         }
 
         private void Update()
@@ -60,13 +67,18 @@ namespace RyanBeattie.PlayerSystems
             ShadowDamageBarUI.A_UpdateShadowDamageBar?.Invoke();
         }
 
+        bool isDead = false;
         public void StartDamageTimer()
         {
             if (CurrentShadowDamage >= MaxShadowDamage)
             {
                 CurrentShadowDamage = MaxShadowDamage;
                 counting = false;
-                Player.A_PlayerDeath?.Invoke();
+                if (!isDead)
+                {
+                    Player.A_PlayerDeath?.Invoke();
+                    isDead = true;
+                }
             }
             else
             {
@@ -75,6 +87,5 @@ namespace RyanBeattie.PlayerSystems
 
             ShadowDamageBarUI.A_UpdateShadowDamageBar?.Invoke();
         }
-
     }
 }

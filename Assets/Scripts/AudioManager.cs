@@ -9,8 +9,11 @@ public class AudioManager : MonoBehaviour
     public AudioSource birdTakingOff_SFX;
     public AudioSource feetsteps_SFX;
     public AudioSource heartbeat_SFX;
+    public AudioSource shadowAttack_SFX;
+    public AudioSource shadowDeath_SFX;
 
     public bool isWalking;
+    bool hasPlayedClip = false;
 
     private void Awake()
     {
@@ -24,11 +27,20 @@ public class AudioManager : MonoBehaviour
 
     public void PlayHeartbeat()
     {
-        heartbeat_SFX.Play();
+        if (!heartbeat_SFX.isPlaying)
+        {
+            heartbeat_SFX.Play();
+        }
+    }
+    public void StopHeartbeat()
+    {
+        heartbeat_SFX.Stop();
     }
 
-    bool hasPlayedClip = false;
-
+    public void StopFeetsteps()
+    {
+        feetsteps_SFX.Stop();
+    }
     public void PlayFootsteps()
     {
         hasPlayedClip = true;
@@ -39,11 +51,10 @@ public class AudioManager : MonoBehaviour
             feetsteps_SFX.volume = 0.2f;
             if (hasPlayedClip)
             {
-                feetsteps_SFX.UnPause();
+                feetsteps_SFX.Play();
             }
             else
             {
-
                 feetsteps_SFX.Play();
             }
         }
@@ -53,4 +64,16 @@ public class AudioManager : MonoBehaviour
             feetsteps_SFX.Pause();
         }
     }
+
+    public void PlayShadowAttack()
+    {
+        shadowAttack_SFX.time = .6f;
+        shadowAttack_SFX.Play();
+    }
+
+    public void PlayShadowDeath()
+    {
+        shadowDeath_SFX.Play();
+    }
+
 }

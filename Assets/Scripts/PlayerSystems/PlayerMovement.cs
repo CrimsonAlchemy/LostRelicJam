@@ -34,13 +34,16 @@ public class PlayerMovement : MonoBehaviour
             moveInput.x = Input.GetAxisRaw("Horizontal");
             moveInput.y = Input.GetAxisRaw("Vertical");
         }
-
     }
 
     void FixedUpdate()
     {
         if(canMove)
             PlayerMovementInputHandler();
+        else
+        {
+            playerRigidbody.velocity = Vector2.zero;
+        }
     }
     private void PlayerMovementInputHandler()
     {

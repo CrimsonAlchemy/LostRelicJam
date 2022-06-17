@@ -19,6 +19,7 @@ namespace RyanBeattie.PlayerSystems
         [Header("Player Details")]
         [Tooltip("This is to choose whether the player is a human or a shadow character.")]
         public PlayerType playerType;
+        public bool isDead = false;
 
         Collider2D col;
 
@@ -34,6 +35,7 @@ namespace RyanBeattie.PlayerSystems
         public RuntimeAnimatorController humanAnimController;
         public RuntimeAnimatorController shadowAnimController;
         public GameObject shadowDeathEffect;
+        public Transform[] shadowAbsorbPoints;
 
         private void OnEnable()
         {
@@ -79,17 +81,32 @@ namespace RyanBeattie.PlayerSystems
             }
         }
 
+        bool hasSpawnedShadowHeathEffect = false;
         public void Die()
         {
             //TODO Player Death here
+            isDead = true;
             if(playerType == PlayerType.Shadow)
             {
-                Instantiate(shadowDeathEffect, transform.position, Quaternion.identity);
+                if (!hasSpawnedShadowHeathEffect)
+                {
+                    //Instantiate(shadowDeathEffect, transform.position, Quaternion.identity);
+                    GetComponent<PlayerMovement>().canMove = false;
+                    AudioManager.instance.PlayShadowDeath();
+                    hasSpawnedShadowHeathEffect = true;
+                    anim.SetBool("moving", false);
+                }
                 Destroy(gameObject);
             }
             if (playerType == PlayerType.Human)
             {
-
+                //Instantiate(shadowDeathEffect, transform.position, Quaternion.identity);
+                GetComponent<PlayerMovement>().canMove = false;
+                anim.SetBool("dead", true);
+                AudioManager.instance.isWalking = false;
+                AudioManager.instance.StopFeetsteps();
+                AudioManager.instance.PlayShadowAttack();
+                anim.SetBool("moving", false);
             }
         }
 

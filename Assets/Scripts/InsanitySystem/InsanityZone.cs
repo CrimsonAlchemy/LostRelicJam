@@ -20,7 +20,7 @@ namespace RyanBeattie.InsanitySystem
             {
                 theCollider = GetComponent<CircleCollider2D>();
 
-                theCollider.radius = theLight.pointLightInnerRadius;
+                theCollider.radius = theLight.pointLightOuterRadius;
             }
 
         }
