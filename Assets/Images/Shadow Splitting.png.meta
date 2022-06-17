@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bc61a493253a93b44892a406734f453e
+guid: f782d55d3663ca84fac8ef50f164a282
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TotemWaves_0
+      name: Shadow Splitting_0
       rect:
         serializedVersion: 2
-        x: 24
-        y: 24
-        width: 22
-        height: 19
+        x: 11
+        y: 16
+        width: 25
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,20 +142,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f410ab5323646b2408601307c19941ac
-      internalID: 287085637
+      spriteID: d56cd053321c6c348bcf550a22aa90fe
+      internalID: -196382784
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TotemWaves_1
+      name: Shadow Splitting_1
       rect:
         serializedVersion: 2
-        x: 86
-        y: 18
-        width: 39
-        height: 29
+        x: 37
+        y: 23
+        width: 25
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,113 +163,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e620c6a0733d2c74f9238f60160efa1e
-      internalID: -1429861397
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TotemWaves_2
-      rect:
-        serializedVersion: 2
-        x: 145
-        y: 10
-        width: 60
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1e0f516e93e717348829f6abbbac18ff
-      internalID: 1241366375
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TotemWaves_3
-      rect:
-        serializedVersion: 2
-        x: 211
-        y: 4
-        width: 69
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 61aa8cfb03960dc4b9a1f5f83d53d9d5
-      internalID: 2129267258
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TotemWaves_4
-      rect:
-        serializedVersion: 2
-        x: 295
-        y: 18
-        width: 42
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 13c8540e20eaa1d4dbd64f5e8ab9dbdd
-      internalID: -791833634
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TotemWaves_5
-      rect:
-        serializedVersion: 2
-        x: 356
-        y: 9
-        width: 60
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 286329ddd30535c4bae9398ebe487205
-      internalID: -775235589
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TotemWaves_6
-      rect:
-        serializedVersion: 2
-        x: 422
-        y: 5
-        width: 66
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a380d55bfd48e774c9f76d62f3042302
-      internalID: 5679342
+      spriteID: b707a34af8e474b41b7b1265f22d7a8e
+      internalID: 2086516322
       vertices: []
       indices: 
       edges: []
@@ -285,13 +180,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TotemWaves_5: -775235589
-      TotemWaves_1: -1429861397
-      TotemWaves_0: 287085637
-      TotemWaves_2: 1241366375
-      TotemWaves_6: 5679342
-      TotemWaves_4: -791833634
-      TotemWaves_3: 2129267258
+      Shadow Splitting_1: 2086516322
+      Shadow Splitting_0: -196382784
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
