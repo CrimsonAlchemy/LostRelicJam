@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6312163049838231928}
   - component: {fileID: 6312163049838231929}
   - component: {fileID: 7513443244662755776}
+  - component: {fileID: 7812180335067359893}
+  - component: {fileID: 5739222253881519719}
   m_Layer: 0
   m_Name: Torch Light 2D
   m_TagString: Untagged
@@ -52,7 +54,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 0.6696449, b: 0.12641507, a: 1}
-  m_Intensity: 1.5
+  m_Intensity: 1.2
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 000000006b0c9d4b95dba81c67e4cb48
@@ -63,7 +65,7 @@ MonoBehaviour:
   m_NormalMapDistance: 3
   m_NormalMapQuality: 2
   m_UseNormalMap: 0
-  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensityEnabled: 1
   m_ShadowIntensity: 0.75
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
@@ -123,6 +125,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 046c55dd7ccb4d744bec9bb1f8d4e77d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &7812180335067359893
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6312163049838231934}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &5739222253881519719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6312163049838231934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 864c4cd6e61e4894f92116b37a38707d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7110946811655465494

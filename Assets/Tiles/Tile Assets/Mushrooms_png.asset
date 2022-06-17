@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: DungeonTileset_105
+  m_Name: Mushrooms_png
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -1462211735, guid: 6e211373724d71f46b1c55361c49c285, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 933087085dedbaf4f8f86855971d4e44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

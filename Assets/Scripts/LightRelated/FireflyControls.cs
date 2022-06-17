@@ -10,7 +10,8 @@ namespace DhruvS28.LightSystem
         Up,
         Right,
         Down,
-        Left
+        Left,
+        Diagonal
     };
 
     [System.Serializable]
@@ -18,6 +19,8 @@ namespace DhruvS28.LightSystem
     {
         public dir direction = dir.Up;
         public int distance;
+        public int diagonal_x;
+        public int diagonal_y;
     }
 
 
@@ -76,7 +79,7 @@ namespace DhruvS28.LightSystem
             //    moving = true;
             //}
 
-            if (!paused)
+            //if (!paused)
                 Moving();
         }
 
@@ -100,6 +103,10 @@ namespace DhruvS28.LightSystem
                         break;
                     case "Left":
                         moveDirection = new Vector3(movePoints[movePoints.Count-1].x - point.distance, movePoints[movePoints.Count-1].y, movePoints[movePoints.Count-1].z);
+                        break;
+                    case "Diagonal":
+                        Debug.Log("HErehafrhaf");
+                        moveDirection = new Vector3(movePoints[movePoints.Count - 1].x + point.diagonal_x, movePoints[movePoints.Count - 1].y + point.diagonal_y, movePoints[movePoints.Count - 1].z);
                         break;
                     default:
                         break;
