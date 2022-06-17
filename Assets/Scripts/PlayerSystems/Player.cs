@@ -74,10 +74,20 @@ namespace RyanBeattie.PlayerSystems
             {
                 ShadowDamageManager.instance.Counting = true;
             }
-            else
+            if(!col.IsTouchingLayers(insanityZone) && playerType == PlayerType.Shadow)
             {
                 ShadowDamageManager.instance.Counting = false;
                 ShadowDamageManager.instance.ResetCurrentDamage();
+            }
+
+            if(col.IsTouchingLayers(insanityZone) && playerType == PlayerType.Human)
+            {
+                InsanitySystem.InsanitySystem.instance.Counting = false;
+            }
+            if (!col.IsTouchingLayers(insanityZone) && playerType == PlayerType.Human)
+            {
+
+                InsanitySystem.InsanitySystem.instance.Counting = true;
             }
         }
 
