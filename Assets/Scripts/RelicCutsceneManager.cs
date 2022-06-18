@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
-using UnityEngine.UI;
 
 public class RelicCutsceneManager : MonoBehaviour
 {
@@ -11,8 +8,6 @@ public class RelicCutsceneManager : MonoBehaviour
     public GameObject introCutscene;
     GameObject player;
     public GameObject animationPlayer;
-
-    public PlayableDirector introPlayableDirector;
 
     private void Awake()
     {
@@ -43,13 +38,4 @@ public class RelicCutsceneManager : MonoBehaviour
         player.GetComponent<PlayerMovement>().canMove = false;
         player.SetActive(false);
     }
-
-    //public void StopPlayingIntroCutscene()
-    //{
-    //    if (introPlayableDirector.playableGraph.IsDone())
-    //    {
-    //        introCutscene.SetActive(false);
-    //    }
-    //}
-
 }
