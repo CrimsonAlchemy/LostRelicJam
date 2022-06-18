@@ -40794,7 +40794,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1281305371
 Transform:
   m_ObjectHideFlags: 0
@@ -44759,7 +44759,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 301c6bab3d375a34597d7cd750298e27, type: 3}
+  m_Sprite: {fileID: 21300000, guid: af7722968deb9214f88483dc2c9ecd18, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -47413,6 +47413,10 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5675270821486394719, guid: cf608cdcda31ee4408cf3656b59c1218, type: 3}
+      propertyPath: fadeAnim
+      value: 
+      objectReference: {fileID: 249862902}
     - target: {fileID: 5675270821737001924, guid: cf608cdcda31ee4408cf3656b59c1218, type: 3}
       propertyPath: m_Enabled
       value: 1

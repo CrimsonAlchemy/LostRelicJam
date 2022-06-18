@@ -9,7 +9,6 @@ public class LevelManager : MonoBehaviour
     public void LoadNextLevel(string levelToLoad)
     {
         SceneManager.LoadScene(levelToLoad);
-
     }
 
 }
