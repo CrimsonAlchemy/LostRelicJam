@@ -11,7 +11,7 @@ namespace RyanBeattie.PlayerSystems
         float currentShadowDamage = 0f;
         bool counting = false;
 
-        GameObject player;
+        //GameObject player;
 
         private void Awake()
         {
@@ -20,7 +20,8 @@ namespace RyanBeattie.PlayerSystems
 
         private void Start()
         {
-            player = FindObjectOfType<PlayerSystems.Player>().gameObject;
+            //if(player == null)
+            //    player = FindObjectOfType<Player>().gameObject;
         }
 
         private void Update()

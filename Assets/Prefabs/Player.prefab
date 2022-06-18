@@ -5210,13 +5210,14 @@ GameObject:
   - component: {fileID: 1253662413504466601}
   - component: {fileID: 1621435767}
   - component: {fileID: 574738252}
+  - component: {fileID: 1299715015}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1253662413504466604
 Transform:
   m_ObjectHideFlags: 0
@@ -5249,6 +5250,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerType: 0
   isDead: 0
+  hasShadowOnHuman: 1
+  shadowTrailEffect: {fileID: 598587698}
   insanityZone:
     serializedVersion: 2
     m_Bits: 128
@@ -5322,8 +5325,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.099999994, y: -0.59265363}
-  m_Size: {x: 0.5, y: 0.64469266}
+  m_Offset: {x: 0.099999994, y: -0.42640957}
+  m_Size: {x: 0.5, y: 0.9771808}
   m_Direction: 0
 --- !u!114 &1621435767
 MonoBehaviour:
@@ -5360,6 +5363,58 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!212 &1299715015
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253662413504466605}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2, y: 4}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1253662414636059485
 GameObject:
   m_ObjectHideFlags: 0
@@ -5433,7 +5488,7 @@ SpriteRenderer:
   m_SortingLayerID: 480828309
   m_SortingLayer: 2
   m_SortingOrder: 2
-  m_Sprite: {fileID: -1816852433, guid: a8fc87a4d0608ac4095720954e145d52, type: 3}
+  m_Sprite: {fileID: 1094366323, guid: 091d862d838b69d4a9495925be872537, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

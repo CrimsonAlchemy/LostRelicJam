@@ -8,7 +8,6 @@ namespace RyanBeattie.Iteractables
     {
         public bool canInteract = false;
         [SerializeField] GameObject textbox;
-
         private void Update()
         {
             Interact();
@@ -38,8 +37,9 @@ namespace RyanBeattie.Iteractables
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    Debug.Log("Interacted with the Lost Relic.");
+                    //Debug.Log("Interacted with the Lost Relic.");
                     RelicCutsceneManager.instance.PlayRelic_Cutscene();
+                    canInteract = false;
                 }
             }
         }
