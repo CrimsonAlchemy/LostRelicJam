@@ -20,6 +20,7 @@ namespace RyanBeattie.PlayerSystems
         [Tooltip("This is to choose whether the player is a human or a shadow character.")]
         public PlayerType playerType;
         public bool isDead = false;
+        public bool hasShadowOnHuman = true;
         public GameObject shadowTrailEffect;
 
         Collider2D col;
@@ -41,6 +42,28 @@ namespace RyanBeattie.PlayerSystems
         private void OnEnable()
         {
             A_PlayerDeath += Die;
+            
+            Camera.main.GetComponent<CameraFollow>().player = this.transform;
+
+            if (playerType == PlayerType.Human)
+            {
+                anim.runtimeAnimatorController = humanAnimController;
+                shadowTrailEffect.SetActive(false);
+
+                if (hasShadowOnHuman)
+                {
+                    anim.SetBool("humanHasShadow", true);
+                }
+                else
+                {
+                    anim.SetBool("humanHasShadow", false);
+                }
+            }
+            if (playerType == PlayerType.Shadow)
+            {
+                anim.runtimeAnimatorController = shadowAnimController;
+                shadowTrailEffect.SetActive(true);
+            }
         }
 
         private void OnDisable()
@@ -53,16 +76,25 @@ namespace RyanBeattie.PlayerSystems
             if(col == null)
                 col = GetComponent<Collider2D>();
 
-            if(playerType == PlayerType.Human)
-            {
-                anim.runtimeAnimatorController = humanAnimController;
-                shadowTrailEffect.SetActive(false);
-            }
-            if(playerType == PlayerType.Shadow)
-            {
-                anim.runtimeAnimatorController = shadowAnimController;
-                shadowTrailEffect.SetActive(true);
-            }
+            //if(playerType == PlayerType.Human)
+            //{
+            //    anim.runtimeAnimatorController = humanAnimController;
+            //    shadowTrailEffect.SetActive(false);
+
+            //    //if (hasShadowOnHuman)
+            //    //{
+            //    //    anim.SetBool("humanHasShadow", true);
+            //    //}
+            //    //else
+            //    //{
+            //    //    anim.SetBool("humanHasShadow", false);
+            //    //}
+            //}
+            //if(playerType == PlayerType.Shadow)
+            //{
+            //    anim.runtimeAnimatorController = shadowAnimController;
+            //    shadowTrailEffect.SetActive(true);
+            //}
         }
 
         private void Update()
