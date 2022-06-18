@@ -8,13 +8,15 @@ public class CameraFollow : MonoBehaviour
 
     public float speed;
 
+
     // public Vector3 offset;
 
     void Start()
     {
         speed = 0.125f;
-        
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        try { player = GameObject.FindGameObjectWithTag("Player").transform; }
+        catch {}
     }
 
     void LateUpdate()
