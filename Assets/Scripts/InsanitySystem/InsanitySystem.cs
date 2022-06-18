@@ -14,6 +14,7 @@ namespace RyanBeattie.InsanitySystem
 
         float currentInsanity = 0f;
         bool counting = false;
+        public bool inMainMenu = true;
 
         private void Awake()
         {
@@ -22,7 +23,7 @@ namespace RyanBeattie.InsanitySystem
 
         private void Update()
         {
-            if (counting)
+            if (counting && !inMainMenu)
             { 
                 InsanityIncreaseTimer();
                 AudioManager.instance.PlayHeartbeat();

@@ -8,6 +8,7 @@ public class EndingCutsceneManager : MonoBehaviour
     public static EndingCutsceneManager instance;
 
     public GameObject playersEnteringScene;
+    public GameObject connectingScene;
     GameObject player;
     
 
@@ -29,4 +30,10 @@ public class EndingCutsceneManager : MonoBehaviour
         player.SetActive(false);
     }
 
+    public void ConnectingScene()
+    {
+        connectingScene.SetActive(true);
+        player.GetComponent<PlayerMovement>().canMove = false;
+        player.SetActive(false);
+    }
 }
