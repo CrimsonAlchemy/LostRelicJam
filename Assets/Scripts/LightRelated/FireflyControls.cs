@@ -105,7 +105,6 @@ namespace DhruvS28.LightSystem
                         moveDirection = new Vector3(movePoints[movePoints.Count-1].x - point.distance, movePoints[movePoints.Count-1].y, movePoints[movePoints.Count-1].z);
                         break;
                     case "Diagonal":
-                        Debug.Log("HErehafrhaf");
                         moveDirection = new Vector3(movePoints[movePoints.Count - 1].x + point.diagonal_x, movePoints[movePoints.Count - 1].y + point.diagonal_y, movePoints[movePoints.Count - 1].z);
                         break;
                     default:
