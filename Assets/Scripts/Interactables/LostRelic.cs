@@ -36,7 +36,7 @@ namespace RyanBeattie.Iteractables
         {
             if (canInteract)
             {
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton0))
                 {
                     //Debug.Log("Interacted with the Lost Relic.");
                     if (!isEndGame)

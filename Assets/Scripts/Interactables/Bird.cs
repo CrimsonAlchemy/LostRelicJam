@@ -83,7 +83,7 @@ namespace RyanBeattie.Iteractables
         {
             if (canInteract)
             {
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton0))
                 {
                     //To detect if the player is over a pit or not
                     if (!playerInShadow)
