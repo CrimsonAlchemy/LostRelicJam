@@ -92835,7 +92835,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1253662413504466600, guid: 860a65cbfece9e64faf7153accdbd867, type: 3}
       propertyPath: playerType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1253662413504466600, guid: 860a65cbfece9e64faf7153accdbd867, type: 3}
       propertyPath: hasShadowOnHuman
@@ -92981,3 +92981,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 776abcb9e404ea74080224bfe2444141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ReloadLevel: 0
+  anim: {fileID: 0}
