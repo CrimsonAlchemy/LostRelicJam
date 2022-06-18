@@ -51,20 +51,20 @@ public class AudioManager : MonoBehaviour
     }
     public void PlayFootsteps()
     {
-        hasPlayedClip = true;
+        //hasPlayedClip = true;
         if (!feetsteps_SFX.isPlaying && isWalking)
         {
             //feetsteps_SFX.pitch = Random.Range(0.3f, 1.1f);
             //TODO 0.65 is a good pitch speed for animations as they are currently. Can change when animations change.
             //feetsteps_SFX.volume = 0.3f;
-            if (hasPlayedClip)
-            {
+            //if (hasPlayedClip)
+            //{
+            //    feetsteps_SFX.Play();
+            //}
+            //else
+            //{
                 feetsteps_SFX.Play();
-            }
-            else
-            {
-                feetsteps_SFX.Play();
-            }
+            //}
         }
         if (!isWalking)
         {
@@ -73,15 +73,25 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    bool hasPlayedShadowAttack = false;
     public void PlayShadowAttack()
     {
-        shadowAttack_SFX.time = .6f;
-        shadowAttack_SFX.Play();
+        if (!shadowAttack_SFX.isPlaying && !hasPlayedShadowAttack)
+        {
+            shadowAttack_SFX.time = .6f;
+            shadowAttack_SFX.Play();
+            hasPlayedShadowAttack = true;
+        }
     }
 
+    bool hasPlayedShadowDeath = false;
     public void PlayShadowDeath()
     {
-        shadowDeath_SFX.Play();
+        if (!shadowDeath_SFX.isPlaying && !hasPlayedShadowDeath)
+        {
+            shadowDeath_SFX.Play();
+            hasPlayedShadowDeath = true;
+        }
     }
 
 }

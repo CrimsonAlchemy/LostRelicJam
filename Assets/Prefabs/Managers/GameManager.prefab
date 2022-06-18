@@ -528,7 +528,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1080653674
 Transform:
   m_ObjectHideFlags: 0
@@ -777,7 +777,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1192276165}
-  - component: {fileID: 1192276166}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -810,24 +809,6 @@ Transform:
   m_Father: {fileID: 5675270821737001930}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1192276166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1192276164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e10f48627ec8cda4e9a21f8c93da5c56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  birdTakingOff_SFX: {fileID: 1326775547}
-  feetsteps_SFX: {fileID: 1443920101}
-  heartbeat_SFX: {fileID: 253388797}
-  shadowAttack_SFX: {fileID: 1139792724}
-  shadowDeath_SFX: {fileID: 557025859}
-  isWalking: 0
 --- !u!1 &1326775545
 GameObject:
   m_ObjectHideFlags: 0
@@ -1256,7 +1237,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 1112476750264272573, guid: 76a3caf0c99539c4188d8b9b0f569104, type: 2}
   m_audioClip: {fileID: 8300000, guid: 2935476aab7310b4b993ac1729c5e649, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1432,4 +1413,6 @@ MonoBehaviour:
   heartbeat_SFX: {fileID: 253388797}
   shadowAttack_SFX: {fileID: 1139792724}
   shadowDeath_SFX: {fileID: 557025859}
+  outro_Music: {fileID: 2047390208}
+  outroMusic_GO: {fileID: 2047390206}
   isWalking: 0

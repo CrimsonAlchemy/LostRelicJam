@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7513443244662755776}
   - component: {fileID: 7812180335067359893}
   - component: {fileID: 5739222253881519719}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Torch Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7316240418028043269}
   - component: {fileID: 4331886954135077556}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,6 +275,10 @@ PrefabInstance:
     - target: {fileID: 1533664543966353139, guid: d507144180fa2cc4cb12a9f46655518f, type: 3}
       propertyPath: m_Name
       value: FireParticleSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533664543966353139, guid: d507144180fa2cc4cb12a9f46655518f, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1533664543966353150, guid: d507144180fa2cc4cb12a9f46655518f, type: 3}
       propertyPath: m_RootOrder

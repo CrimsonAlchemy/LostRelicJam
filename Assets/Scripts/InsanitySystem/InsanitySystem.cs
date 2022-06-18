@@ -30,7 +30,6 @@ namespace RyanBeattie.InsanitySystem
             }
             if (!counting)
             {
-
                 AudioManager.instance.StopHeartbeat();
             }
         }

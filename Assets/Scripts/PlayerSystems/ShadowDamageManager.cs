@@ -10,8 +10,9 @@ namespace RyanBeattie.PlayerSystems
         [SerializeField] float maxShadowDamage = 1.5f;
         float currentShadowDamage = 0f;
         bool counting = false;
-
+        public bool isDead = false;
         //GameObject player;
+
 
         private void Awake()
         {
@@ -29,6 +30,11 @@ namespace RyanBeattie.PlayerSystems
             if (counting)
             {
                 StartDamageTimer();
+                AudioManager.instance.PlayHeartbeat();
+            }
+            if(!counting)
+            {
+                AudioManager.instance.StopHeartbeat();
             }
         }
 
@@ -68,7 +74,7 @@ namespace RyanBeattie.PlayerSystems
             ShadowDamageBarUI.A_UpdateShadowDamageBar?.Invoke();
         }
 
-        bool isDead = false;
+        
         public void StartDamageTimer()
         {
             if (CurrentShadowDamage >= MaxShadowDamage)
@@ -78,8 +84,8 @@ namespace RyanBeattie.PlayerSystems
                 if (!isDead)
                 {
                     Player.A_PlayerDeath?.Invoke();
-                    isDead = true;
                 }
+                isDead = true;
             }
             else
             {

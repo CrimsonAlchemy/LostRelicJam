@@ -8,6 +8,13 @@ public class Pause : MonoBehaviour
     public GameObject pauseScreen;
 
     public bool paused = false;
+    public bool inMainMenu = false;
+
+    public void InMainMenu()
+    {
+        inMainMenu = false;
+    }
+
     private void Start()
     {
         paused = false;
@@ -23,8 +30,11 @@ public class Pause : MonoBehaviour
 
         if (paused)
         {
-            pauseScreen.SetActive(true);
-            Time.timeScale = 0;
+            if (!inMainMenu)
+            {
+                pauseScreen.SetActive(true);
+                Time.timeScale = 0;
+            }
         }
         else
         {

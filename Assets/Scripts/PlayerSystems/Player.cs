@@ -76,6 +76,7 @@ namespace RyanBeattie.PlayerSystems
             if(col == null)
                 col = GetComponent<Collider2D>();
 
+            #region Old Testing Code
             //if(playerType == PlayerType.Human)
             //{
             //    anim.runtimeAnimatorController = humanAnimController;
@@ -95,9 +96,10 @@ namespace RyanBeattie.PlayerSystems
             //    anim.runtimeAnimatorController = shadowAnimController;
             //    shadowTrailEffect.SetActive(true);
             //}
+            #endregion
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             InsanityZone_CollisionDetection();
             //HazardZone_CollisionDetection();
@@ -126,32 +128,37 @@ namespace RyanBeattie.PlayerSystems
             }
         }
 
-        bool hasSpawnedShadowHeathEffect = false;
+        bool hasSpawnedShadowHealthEffect = false;
         public void Die()
         {
             //TODO Player Death here
-            isDead = true;
-            if(playerType == PlayerType.Shadow)
+            //isDead = true;
+            if(playerType == PlayerType.Shadow && !isDead)
             {
-                if (!hasSpawnedShadowHeathEffect)
+                ShadowDamageManager.instance.isDead = true;
+                if (!hasSpawnedShadowHealthEffect)
                 {
-                    Instantiate(shadowDeathEffect, transform.position, Quaternion.identity);
-                    GetComponent<PlayerMovement>().canMove = false;
+                    SpawnDeathParticles();
                     AudioManager.instance.PlayShadowDeath();
-                    hasSpawnedShadowHeathEffect = true;
+                    GetComponent<PlayerMovement>().canMove = false;
                     anim.SetBool("moving", false);
+                    //isDead = true;
+                    Destroy(gameObject);
+                    hasSpawnedShadowHealthEffect = true;
                 }
+                isDead = true;
                 Destroy(gameObject);
+                Debug.Log("Is dead");
             }
             if (playerType == PlayerType.Human)
             {
-                //Instantiate(shadowDeathEffect, transform.position, Quaternion.identity);
                 GetComponent<PlayerMovement>().canMove = false;
                 anim.SetBool("dead", true);
                 AudioManager.instance.isWalking = false;
                 AudioManager.instance.StopFeetsteps();
                 AudioManager.instance.PlayShadowAttack();
                 anim.SetBool("moving", false);
+                isDead = true;
             }
         }
 
@@ -163,5 +170,15 @@ namespace RyanBeattie.PlayerSystems
         //        Debug.Log("Play Falling Animation here");
         //    }
         //}
+
+        bool hasSpawnedP = false;
+        void SpawnDeathParticles()
+        {
+            if (!hasSpawnedP)
+            {
+                Instantiate(shadowDeathEffect, transform.position, Quaternion.identity);
+                hasSpawnedP = true;
+            }
+        }
     }
 }
