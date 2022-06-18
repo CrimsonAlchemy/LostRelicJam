@@ -453,7 +453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canInteract: 0
   textbox: {fileID: 1175321553}
-  isEndGame: 0
+  isEndGame: 1
 --- !u!1001 &9083076105956502853
 PrefabInstance:
   m_ObjectHideFlags: 0
