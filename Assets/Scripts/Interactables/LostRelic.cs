@@ -46,7 +46,8 @@ namespace RyanBeattie.Iteractables
                     }
                     if (isEndGame)
                     {
-
+                        EndingCutsceneManager.instance.ConnectingScene();
+                        canInteract = false;
                     }
                 }
             }

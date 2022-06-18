@@ -11,6 +11,9 @@ public class AudioManager : MonoBehaviour
     public AudioSource heartbeat_SFX;
     public AudioSource shadowAttack_SFX;
     public AudioSource shadowDeath_SFX;
+    public AudioSource outro_Music;
+
+    public GameObject outroMusic_GO;
 
     public bool isWalking;
     bool hasPlayedClip = false;
@@ -18,6 +21,11 @@ public class AudioManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+    }
+
+    public void PlayOutroMusic()
+    {
+        outroMusic_GO.SetActive(true);
     }
 
     public void PlayBirdSound()

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Playables;
 
 public class EndingCutsceneManager : MonoBehaviour
 {
@@ -32,6 +31,7 @@ public class EndingCutsceneManager : MonoBehaviour
 
     public void ConnectingScene()
     {
+        FindPlayer();
         connectingScene.SetActive(true);
         player.GetComponent<PlayerMovement>().canMove = false;
         player.SetActive(false);
