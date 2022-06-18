@@ -6,6 +6,7 @@ using UnityEngine.Playables;
 public class CutsceneEndCheck : MonoBehaviour
 {
     public bool isEndingScene = false;
+    public bool endingOpeningScene = false;
 
     private void Update()
     {
@@ -21,6 +22,13 @@ public class CutsceneEndCheck : MonoBehaviour
                 gameObject.SetActive(false);
 
             }
+            
+            if (endingOpeningScene)
+            {
+                LevelManager.instance.LoadNextLevel("DarkZone");
+
+            }
+            
         }
         
     }

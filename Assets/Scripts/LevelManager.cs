@@ -6,9 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    public static LevelManager instance;
 
     public bool ReloadLevel;
     public Animator anim;
+
+
+    float curFadeTime = 1f;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
@@ -28,7 +37,11 @@ public class LevelManager : MonoBehaviour
         if(ReloadLevel)
             SwitchScene(SceneManager.GetActiveScene().ToString());
         else
-            SceneManager.LoadScene(levelToLoad);
+        {
+            StartCoroutine(SwitchScene(levelToLoad));
+            //SwitchScene(levelToLoad);
+        }
+            //SceneManager.LoadScene(levelToLoad);
     }
 
 
@@ -36,8 +49,7 @@ public class LevelManager : MonoBehaviour
     {
         anim.Play("FadeOut");
         yield return new WaitForSeconds(1f);
-
-        LoadNextLevel(newScene);
+        SceneManager.LoadScene(newScene);
     }
 
 }

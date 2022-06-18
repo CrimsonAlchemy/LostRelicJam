@@ -5,16 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
-    path: Assets/Scenes/Final/RelicRoom.unity
-    guid: a1cbd67a2617bd843b1fed7a443a4ec1
-  - enabled: 0
-    path: Assets/Scenes/Testing_InstanitySystem.unity
-    guid: 3f32f47c17700f24cb61e6033c2df2b9
+  - enabled: 1
+    path: Assets/Scenes/Final/RelicRoomOpening.unity
+    guid: 1f548408d62b90c4fb54244e6eabd678
   - enabled: 1
     path: Assets/Scenes/Final/DarkZone.unity
     guid: 7ebeef32068583840afc06667b860113
+  - enabled: 1
+    path: Assets/Scenes/Final/LightZone.unity
+    guid: 46dea459af9f4094d9f82f9d0d2614be
+  - enabled: 1
+    path: Assets/Scenes/Final/RelicRoomEnding.unity
+    guid: cf42f95987c4edf4ca7e76bf377f1ad9
   m_configObjects: {}
