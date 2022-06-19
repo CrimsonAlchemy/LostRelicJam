@@ -53,6 +53,12 @@ public class Pause : MonoBehaviour
         TogglePaused();
     }
 
+    public void BackToMainMenu()
+    {
+        TogglePaused();
+        LevelManager.instance.LoadNextLevel("RelicRoomOpening");
+    }
+
     public void QuitGame()
     {
         Debug.Log("Quitting the game!");

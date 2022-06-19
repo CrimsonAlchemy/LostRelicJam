@@ -12,7 +12,7 @@ public class LevelManager : MonoBehaviour
     public Animator anim;
 
 
-    float curFadeTime = 1f;
+    //float curFadeTime = 1f;
 
     private void Awake()
     {

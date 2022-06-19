@@ -159,6 +159,10 @@ namespace RyanBeattie.PlayerSystems
                 AudioManager.instance.PlayShadowAttack();
                 anim.SetBool("moving", false);
                 isDead = true;
+
+                //TODO Testing Death
+
+
             }
         }
 

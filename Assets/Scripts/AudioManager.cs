@@ -16,7 +16,7 @@ public class AudioManager : MonoBehaviour
     public GameObject outroMusic_GO;
 
     public bool isWalking;
-    bool hasPlayedClip = false;
+    //bool hasPlayedClip = false;
 
     private void Awake()
     {
