@@ -42,6 +42,8 @@ namespace RyanBeattie.Iteractables
         float restingTime = 0f;
         private SpriteRenderer gfx;
         bool hasPlayedAudio = false;
+
+        CameraFollow cam;
         #endregion
 
         private void Start()
@@ -52,6 +54,10 @@ namespace RyanBeattie.Iteractables
                 theRigidbody = GetComponent<Rigidbody2D>();
             if(player == null)
                 player = FindObjectOfType<PlayerSystems.Player>().gameObject;
+            if(cam == null)
+            {
+                cam = Camera.main.GetComponent<CameraFollow>();
+            }
         }
 
         private void Update()
@@ -153,7 +159,7 @@ namespace RyanBeattie.Iteractables
 
                 PlayerSystems.ShadowDamageManager.instance.Counting = false;
                 player.GetComponent<PlayerMovement>().enabled = false;
-                FindObjectOfType<CameraFollow>().player = gameObject.transform;
+                cam.player = gameObject.transform;
 
                 //TODO Testing absord effect
                 GameObject asorbEffect;
@@ -165,7 +171,7 @@ namespace RyanBeattie.Iteractables
 
         void PlayerExitingBirdsShadow()
         {
-            FindObjectOfType<CameraFollow>().player = player.transform;
+            cam.player = player.transform;
             player.GetComponent<PlayerMovement>().enabled = true;
 
 
@@ -177,7 +183,7 @@ namespace RyanBeattie.Iteractables
             player.transform.position = new Vector2(transform.position.x, transform.position.y - 0.5f);
             player.SetActive(true);
 
-            //TODO Testing Absorb Particle Effect
+            //Absorb Particle Effect
             AbsorbEffect[] effects = FindObjectsOfType<AbsorbEffect>();
             foreach (var effect in effects)
             {
