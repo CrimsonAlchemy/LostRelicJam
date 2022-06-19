@@ -3899,7 +3899,7 @@ MonoBehaviour:
   m_Loop: 0
   m_bufferingTime: 0.1
   m_ClipProperties:
-    volume: 0.2
+    volume: 0.1
 --- !u!114 &6763305209392449959
 MonoBehaviour:
   m_ObjectHideFlags: 1

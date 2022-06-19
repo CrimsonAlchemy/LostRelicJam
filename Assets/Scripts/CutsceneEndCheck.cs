@@ -19,16 +19,14 @@ public class CutsceneEndCheck : MonoBehaviour
             }
             else
             {
-                gameObject.SetActive(false);
+                //gameObject.SetActive(false);
 
             }
             
             if (endingOpeningScene)
             {
                 LevelManager.instance.LoadNextLevel("DarkZone");
-
             }
-            
         }
         
     }
