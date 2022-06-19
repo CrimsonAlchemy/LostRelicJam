@@ -148,7 +148,8 @@ namespace RyanBeattie.PlayerSystems
                 }
                 isDead = true;
                 Destroy(gameObject);
-                Debug.Log("Is dead");
+                LevelManager.instance.RestartLevel();
+                //Debug.Log("Is dead");
             }
             if (playerType == PlayerType.Human)
             {
@@ -161,7 +162,8 @@ namespace RyanBeattie.PlayerSystems
                 isDead = true;
 
                 //TODO Testing Death
-
+                //LevelManager.instance.ReloadLevel = true;
+                LevelManager.instance.RestartLevel();
 
             }
         }

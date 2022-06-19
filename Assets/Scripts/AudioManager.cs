@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource shadowAttack_SFX;
     public AudioSource shadowDeath_SFX;
     public AudioSource outro_Music;
+    public AudioSource sizzle_SFX;
 
     public GameObject outroMusic_GO;
 
@@ -43,6 +44,19 @@ public class AudioManager : MonoBehaviour
     public void StopHeartbeat()
     {
         heartbeat_SFX.Stop();
+    }
+
+    public void PlaySizzle()
+    {
+        if (sizzle_SFX.isPlaying)
+        {
+            sizzle_SFX.Play();
+        }
+    }
+
+    public void StopSizzle()
+    {
+        sizzle_SFX.Stop();
     }
 
     public void StopFeetsteps()

@@ -32,10 +32,16 @@ public class LevelManager : MonoBehaviour
         //}
     }
 
+    public void RestartLevel()
+    {
+        Scene curScene = SceneManager.GetActiveScene();
+        StartCoroutine(ShadowDeathSwitchScene(curScene.name));
+    }
+
     public void LoadNextLevel(string levelToLoad)
     {
         if(ReloadLevel)
-            SwitchScene(SceneManager.GetActiveScene().ToString());
+            StartCoroutine(SwitchScene(SceneManager.GetActiveScene().ToString()));
         else
         {
             StartCoroutine(SwitchScene(levelToLoad));
@@ -49,6 +55,13 @@ public class LevelManager : MonoBehaviour
     {
         anim.Play("FadeOut");
         yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(newScene);
+    }
+
+    public IEnumerator ShadowDeathSwitchScene(string newScene)
+    {
+        anim.Play("FadeOut");
+        yield return new WaitForSeconds(6.5f);
         SceneManager.LoadScene(newScene);
     }
 

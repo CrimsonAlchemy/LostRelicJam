@@ -30,11 +30,11 @@ namespace RyanBeattie.PlayerSystems
             if (counting)
             {
                 StartDamageTimer();
-                AudioManager.instance.PlayHeartbeat();
+                AudioManager.instance.PlaySizzle();
             }
             if(!counting)
             {
-                AudioManager.instance.StopHeartbeat();
+                AudioManager.instance.StopSizzle();
             }
         }
 
