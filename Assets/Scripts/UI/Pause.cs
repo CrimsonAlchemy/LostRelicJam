@@ -55,7 +55,8 @@ public class Pause : MonoBehaviour
 
     public void BackToMainMenu()
     {
-        TogglePaused();
+        //TogglePaused();
+
         LevelManager.instance.LoadNextLevel("RelicRoomOpening");
     }
 
