@@ -22,6 +22,7 @@ namespace RyanBeattie.PlayerSystems
         public bool isDead = false;
         public bool hasShadowOnHuman = true;
         public GameObject shadowTrailEffect;
+        public bool deathFromPit = false;
 
         Collider2D col;
 
@@ -148,7 +149,7 @@ namespace RyanBeattie.PlayerSystems
                 }
                 isDead = true;
                 Destroy(gameObject);
-                LevelManager.instance.RestartLevel();
+                LevelManager.instance.ShadowDeath_RestartLevel();
                 //Debug.Log("Is dead");
             }
             if (playerType == PlayerType.Human)
@@ -157,25 +158,23 @@ namespace RyanBeattie.PlayerSystems
                 anim.SetBool("dead", true);
                 AudioManager.instance.isWalking = false;
                 AudioManager.instance.StopFeetsteps();
-                AudioManager.instance.PlayShadowAttack();
+
+                if (!deathFromPit)
+                {
+                    AudioManager.instance.PlayShadowAttack();
+                }
+                if (deathFromPit)
+                {
+                    AudioManager.instance.PlayPitFalling();
+                }
                 anim.SetBool("moving", false);
                 isDead = true;
 
                 //TODO Testing Death
-                //LevelManager.instance.ReloadLevel = true;
-                LevelManager.instance.RestartLevel();
+                LevelManager.instance.PlayerDeath_ReloadLevel();
 
             }
         }
-
-        //void HazardZone_CollisionDetection()
-        //{
-        //    if (col.IsTouchingLayers(hazardZone) && playerType == PlayerType.Human)
-        //    {
-        //        //Play falling animation.
-        //        Debug.Log("Play Falling Animation here");
-        //    }
-        //}
 
         bool hasSpawnedP = false;
         void SpawnDeathParticles()

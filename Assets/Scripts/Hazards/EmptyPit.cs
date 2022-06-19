@@ -27,12 +27,12 @@ namespace RyanBeattie.Hazards
 
                 }
                 shadowFallingAnim.transform.position = transform.position;
+
+                collision.GetComponent<PlayerSystems.Player>().deathFromPit = true;
                 PlayerSystems.Player.A_PlayerDeath?.Invoke();
-                LevelManager.instance.RestartLevel();
+                //LevelManager.instance.PitFall_ReloadLevel();
                 Destroy(collision.gameObject);
                 shadowFallingAnim.SetActive(true);
-
-                //LevelManager.instance.RestartLevel();
 
                 //TODO Audio Testing for pit fall
                 AudioManager.instance.StopFeetsteps();

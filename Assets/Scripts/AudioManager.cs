@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource shadowDeath_SFX;
     public AudioSource outro_Music;
     public AudioSource sizzle_SFX;
+    public AudioSource pit_SFX;
 
     public GameObject outroMusic_GO;
 
@@ -44,6 +45,12 @@ public class AudioManager : MonoBehaviour
     public void StopHeartbeat()
     {
         heartbeat_SFX.Stop();
+    }
+
+    public void PlayPitFalling()
+    {
+        if (!pit_SFX.isPlaying)
+            pit_SFX.Play();
     }
 
     public void PlaySizzle()

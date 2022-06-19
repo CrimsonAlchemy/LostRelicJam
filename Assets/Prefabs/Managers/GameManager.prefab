@@ -1805,6 +1805,8 @@ MonoBehaviour:
   shadowAttack_SFX: {fileID: 1139792724}
   shadowDeath_SFX: {fileID: 557025859}
   outro_Music: {fileID: 2047390208}
+  sizzle_SFX: {fileID: 1850220677316314863}
+  pit_SFX: {fileID: 6372452640910593173}
   outroMusic_GO: {fileID: 2047390206}
   isWalking: 0
 --- !u!1 &7913123435178937391

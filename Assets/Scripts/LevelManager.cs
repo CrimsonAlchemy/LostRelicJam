@@ -24,18 +24,16 @@ public class LevelManager : MonoBehaviour
         anim.Play("FadeIn");
     }
 
-    void Update()
-    {
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    StartCoroutine(SwitchScene(SceneManager.GetActiveScene().ToString()));
-        //}
-    }
-
-    public void RestartLevel()
+    public void ShadowDeath_RestartLevel()
     {
         Scene curScene = SceneManager.GetActiveScene();
         StartCoroutine(ShadowDeathSwitchScene(curScene.name));
+    }
+
+    public void PlayerDeath_ReloadLevel()
+    {
+        Scene curScene = SceneManager.GetActiveScene();
+        StartCoroutine(PlayerDeathSwitchScene(curScene.name));
     }
 
     public void LoadNextLevel(string levelToLoad)
@@ -45,11 +43,15 @@ public class LevelManager : MonoBehaviour
         else
         {
             StartCoroutine(SwitchScene(levelToLoad));
-            //SwitchScene(levelToLoad);
         }
-            //SceneManager.LoadScene(levelToLoad);
+
     }
 
+    public void PitFall_ReloadLevel()
+    {
+        Scene curScene = SceneManager.GetActiveScene();
+        StartCoroutine(PitFallSwitchScene(curScene.name));
+    }
 
     public IEnumerator SwitchScene(string newScene)
     {
@@ -62,6 +64,21 @@ public class LevelManager : MonoBehaviour
     {
         anim.Play("FadeOut");
         yield return new WaitForSeconds(6.5f);
+        SceneManager.LoadScene(newScene);
+    }
+
+    public IEnumerator PlayerDeathSwitchScene(string newScene)
+    {
+        yield return new WaitForSeconds(2f);
+        anim.Play("FadeOut");
+        yield return new WaitForSeconds(2.5f);
+        SceneManager.LoadScene(newScene);
+    }
+    public IEnumerator PitFallSwitchScene(string newScene)
+    {
+        yield return new WaitForSeconds(1.2f);
+        anim.Play("FadeOut");
+        yield return new WaitForSeconds(3f);
         SceneManager.LoadScene(newScene);
     }
 
