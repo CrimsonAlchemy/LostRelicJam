@@ -62,8 +62,9 @@ public class LevelManager : MonoBehaviour
 
     public IEnumerator ShadowDeathSwitchScene(string newScene)
     {
+        yield return new WaitForSeconds(1f);
         anim.Play("FadeOut");
-        yield return new WaitForSeconds(6.5f);
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(newScene);
     }
 
