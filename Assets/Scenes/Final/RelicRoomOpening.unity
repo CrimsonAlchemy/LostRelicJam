@@ -27554,7 +27554,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!320 &1336066452
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -30842,22 +30842,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 607763813, guid: cf608cdcda31ee4408cf3656b59c1218, type: 3}
-      propertyPath: m_Volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1443920101, guid: cf608cdcda31ee4408cf3656b59c1218, type: 3}
-      propertyPath: Loop
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1443920101, guid: cf608cdcda31ee4408cf3656b59c1218, type: 3}
-      propertyPath: m_Volume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2049728408520606356, guid: cf608cdcda31ee4408cf3656b59c1218, type: 3}
-      propertyPath: m_Volume
-      value: 0.45
-      objectReference: {fileID: 0}
     - target: {fileID: 2673386680264091842, guid: cf608cdcda31ee4408cf3656b59c1218, type: 3}
       propertyPath: m_IsActive
       value: 1
