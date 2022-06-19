@@ -1587,6 +1587,10 @@ PrefabInstance:
       propertyPath: inMainMenu
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5675270821737001925, guid: cf608cdcda31ee4408cf3656b59c1218, type: 3}
+      propertyPath: maxInsanity
+      value: 12.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5675270821737001928, guid: cf608cdcda31ee4408cf3656b59c1218, type: 3}
       propertyPath: m_Name
       value: GameManager
