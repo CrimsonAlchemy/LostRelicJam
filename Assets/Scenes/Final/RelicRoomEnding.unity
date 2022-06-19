@@ -3541,6 +3541,8 @@ PlayableDirector:
     value: {fileID: 1503814911}
   - key: {fileID: -8665590286859287589, guid: 6a37583116e7c704b88abbcdd2868c69, type: 2}
     value: {fileID: 526308346}
+  - key: {fileID: -4345565631365867866, guid: 6a37583116e7c704b88abbcdd2868c69, type: 2}
+    value: {fileID: 526308348}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &364231057
@@ -4217,6 +4219,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6401955847784549899, guid: b1a0ba26ad10d724ab32ed5cf68201d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6401955848449558354, guid: b1a0ba26ad10d724ab32ed5cf68201d0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4319,6 +4325,11 @@ GameObject:
 --- !u!1 &526308347 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1036146170764784749, guid: b1a0ba26ad10d724ab32ed5cf68201d0, type: 3}
+  m_PrefabInstance: {fileID: 526308345}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &526308348 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6401955847017632729, guid: b1a0ba26ad10d724ab32ed5cf68201d0, type: 3}
   m_PrefabInstance: {fileID: 526308345}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &537876747
