@@ -748,6 +748,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 613243272}
     m_Modifications:
+    - target: {fileID: 1798800830831857284, guid: 18cd7dd15d1897945a5b18c9f0d5dbbc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1798800830831857285, guid: 18cd7dd15d1897945a5b18c9f0d5dbbc, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3260,6 +3264,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 613243272}
     m_Modifications:
+    - target: {fileID: 1798800830831857284, guid: 18cd7dd15d1897945a5b18c9f0d5dbbc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1798800830831857285, guid: 18cd7dd15d1897945a5b18c9f0d5dbbc, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -9402,7 +9410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6938533461274473224, guid: 1f2e3befd900b904890704a77ff60721, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6938533461274473225, guid: 1f2e3befd900b904890704a77ff60721, type: 3}
       propertyPath: m_Name
@@ -10420,7 +10428,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 441596661460600336, guid: a95a7450b33873c4a9a6a1d808ce88cb, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 441596661460600338, guid: a95a7450b33873c4a9a6a1d808ce88cb, type: 3}
       propertyPath: m_Name
@@ -27825,7 +27833,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 441596661460600336, guid: a95a7450b33873c4a9a6a1d808ce88cb, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 441596661460600338, guid: a95a7450b33873c4a9a6a1d808ce88cb, type: 3}
       propertyPath: m_Name
@@ -27891,7 +27899,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 441596661460600336, guid: a95a7450b33873c4a9a6a1d808ce88cb, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 441596661460600338, guid: a95a7450b33873c4a9a6a1d808ce88cb, type: 3}
       propertyPath: m_Name
@@ -28591,6 +28599,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 613243272}
     m_Modifications:
+    - target: {fileID: 1798800830831857284, guid: 18cd7dd15d1897945a5b18c9f0d5dbbc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1798800830831857285, guid: 18cd7dd15d1897945a5b18c9f0d5dbbc, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -30230,6 +30242,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 613243272}
     m_Modifications:
+    - target: {fileID: 1798800830831857284, guid: 18cd7dd15d1897945a5b18c9f0d5dbbc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1798800830831857285, guid: 18cd7dd15d1897945a5b18c9f0d5dbbc, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -30289,7 +30305,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 441596661460600336, guid: a95a7450b33873c4a9a6a1d808ce88cb, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 441596661460600338, guid: a95a7450b33873c4a9a6a1d808ce88cb, type: 3}
       propertyPath: m_Name
@@ -31660,7 +31676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1253662414636059483, guid: 860a65cbfece9e64faf7153accdbd867, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1253662414636059483, guid: 860a65cbfece9e64faf7153accdbd867, type: 3}
       propertyPath: m_WasSpriteAssigned
