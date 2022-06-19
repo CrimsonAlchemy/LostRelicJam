@@ -86128,6 +86128,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 607763813, guid: cf608cdcda31ee4408cf3656b59c1218, type: 3}
+      propertyPath: m_Volume
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 1443920101, guid: cf608cdcda31ee4408cf3656b59c1218, type: 3}
       propertyPath: Loop
       value: 0
