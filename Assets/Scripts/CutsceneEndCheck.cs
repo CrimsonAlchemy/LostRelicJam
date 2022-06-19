@@ -16,6 +16,7 @@ public class CutsceneEndCheck : MonoBehaviour
             if (isEndingScene)
             {
                 GameObject.FindObjectOfType<RyanBeattie.PlayerSystems.Player>().canDamage = true;
+                RyanBeattie.InsanitySystem.InsanitySystem.instance.shouldCount = true;
 
                 AudioManager.instance.PlayOutroMusic();
             }

@@ -24,7 +24,7 @@ namespace RyanBeattie.InsanitySystem
 
         private void Update()
         {
-            if (counting && !inMainMenu || shouldCount)
+            if (counting && !inMainMenu && shouldCount)
             { 
                 InsanityIncreaseTimer();
                 AudioManager.instance.PlayHeartbeat();
