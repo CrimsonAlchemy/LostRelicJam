@@ -31,6 +31,7 @@ namespace RyanBeattie.InsanitySystem
             }
             if (!counting)
             {
+                InsanityDecreaseTimer();
                 AudioManager.instance.StopHeartbeat();
             }
         }
@@ -72,6 +73,17 @@ namespace RyanBeattie.InsanitySystem
                 PlayerSystems.Player.A_PlayerDeath?.Invoke();
             }
             else { CurrentInsanity += Time.deltaTime; }
+
+            InsanityBarUI.A_UpdateInsanityBar?.Invoke();
+        }
+
+        void InsanityDecreaseTimer()
+        {
+            if (CurrentInsanity >= 0f)
+            {
+                CurrentInsanity -= Time.deltaTime/10f;
+            }
+            //else { CurrentInsanity += Time.deltaTime; }
 
             InsanityBarUI.A_UpdateInsanityBar?.Invoke();
         }

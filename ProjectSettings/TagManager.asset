@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - JoyStick
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - InsanityZone
   - Hazards
   - Pit
-  - 
+  - Joystick
   - 
   - 
   - 

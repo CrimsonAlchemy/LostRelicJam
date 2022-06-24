@@ -44,7 +44,12 @@ namespace RyanBeattie.Iteractables
         bool hasPlayedAudio = false;
 
         CameraFollow cam;
+
+
+        public bool IntButtonClicked;
         #endregion
+
+
 
         private void Start()
         {
@@ -84,12 +89,17 @@ namespace RyanBeattie.Iteractables
             }
         }
 
-        
+
+        public void ButtonClick()
+        {
+            IntButtonClicked = true;
+        }
+
         public void Interact()
         {
             if (canInteract)
             {
-                if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton0))
+                if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton0) || IntButtonClicked)
                 {
                     //To detect if the player is over a pit or not
                     if (!playerInShadow)
@@ -103,6 +113,8 @@ namespace RyanBeattie.Iteractables
                         playerInShadow = !playerInShadow;
                         PlayerExitingBirdsShadow();
                     }
+
+                    IntButtonClicked = false;
 
                     #region Old Code
                     //if (!pitDetectionBox.IsTouchingLayers(pitLayer))

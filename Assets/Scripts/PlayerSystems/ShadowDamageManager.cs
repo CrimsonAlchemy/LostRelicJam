@@ -70,7 +70,17 @@ namespace RyanBeattie.PlayerSystems
 
         public void ResetCurrentDamage()
         {
-            CurrentShadowDamage = 0f;
+            //CurrentShadowDamage = 0f;
+
+            if (CurrentShadowDamage >= 0f)
+            {
+                CurrentShadowDamage -= Time.deltaTime / 1.5f;
+            }
+            else
+            {
+                Debug.Log("Healed");
+            }
+
             ShadowDamageBarUI.A_UpdateShadowDamageBar?.Invoke();
         }
 

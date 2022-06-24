@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace RyanBeattie.Iteractables
 {
@@ -9,6 +10,9 @@ namespace RyanBeattie.Iteractables
         public bool canInteract = false;
         [SerializeField] GameObject textbox;
         public bool isEndGame;
+
+        public bool IntButtonClicked;
+
         private void Update()
         {
             Interact();
@@ -20,6 +24,7 @@ namespace RyanBeattie.Iteractables
             {
                 canInteract = true;
                 textbox.SetActive(true);
+                //InteractButton.enabled = true;
             }
         }
 
@@ -29,6 +34,7 @@ namespace RyanBeattie.Iteractables
             {
                 canInteract = false;
                 textbox.SetActive(false);
+                //InteractButton.enabled = false;
             }
         }
 
@@ -36,7 +42,7 @@ namespace RyanBeattie.Iteractables
         {
             if (canInteract)
             {
-                if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton0))
+                if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton0) || IntButtonClicked)
                 {
                     //Debug.Log("Interacted with the Lost Relic.");
                     if (!isEndGame)
@@ -49,8 +55,15 @@ namespace RyanBeattie.Iteractables
                         EndingCutsceneManager.instance.ConnectingScene();
                         canInteract = false;
                     }
+
+                    IntButtonClicked = false;
                 }
             }
+        }
+
+        public void ButtonClick()
+        {
+            IntButtonClicked = true;
         }
     }
 
